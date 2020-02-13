@@ -114,6 +114,15 @@
                         </li>
                         
                         <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Unit</span></a>
+                            <ul aria-expanded="false" class="collapse">
+
+                                <li><a href="<?php echo base_url('test-bootstrap/unit') ?>"><i class="fa fa-angle-right"></i> Daftar Unit</a></li>
+                                <li><a href="<?php echo base_url('test-bootstrap/unit/add') ?>"><i class="fa fa-angle-right"></i> Tambah Unit</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Bidang</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?php echo base_url('test-bootstrap/bidang') ?>"><i class="fa fa-angle-right"></i> Daftar Bidang</a></li>
