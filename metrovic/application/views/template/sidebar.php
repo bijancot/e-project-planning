@@ -112,6 +112,14 @@
                                 <li><a href="<?php echo base_url('admin/ui/contact') ?>"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                             </ul>
                         </li>
+                        
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Bidang</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<?php echo base_url('test-bootstrap/bidang') ?>"><i class="fa fa-angle-right"></i> Daftar Bidang</a></li>
+                                <li><a href="<?php echo base_url('test-bootstrap/bidang/add') ?>"><i class="fa fa-angle-right"></i> Tambang Bidang</a></li>
+                            </ul>
+                        </li>
 
                         <!-- <li class="nav-devider"></li>
                         <li class="nav-small-cap">EXTRA COMPONENTS</li> -->
