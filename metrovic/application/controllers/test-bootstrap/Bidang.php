@@ -19,8 +19,8 @@ class Bidang extends CI_Controller{
         $data['bidang'] = $this->Bidang_model->get_all_bidang();
         
         $this->load->view('template/header');
-        $this->load->view('bidang/index',$data);
         $this->load->view('template/sidebar');
+        $this->load->view('bidang/index',$data);
         $this->load->view('template/footer');
     }
 
@@ -69,7 +69,7 @@ class Bidang extends CI_Controller{
                 );
 
                 $this->Bidang_model->update_bidang($id_bidang,$params);            
-                redirect('bidang/index');
+                redirect('test-bootstrap/bidang/index');
             }
             else
             {
@@ -78,8 +78,8 @@ class Bidang extends CI_Controller{
 
                 $data['_view'] = 'bidang/edit';
                 $this->load->view('template/header');
-                $this->load->view('bidang/edit',$data);
                 $this->load->view('template/sidebar');
+                $this->load->view('bidang/edit',$data);
                 $this->load->view('template/footer');
             }
         }
