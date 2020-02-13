@@ -155,25 +155,25 @@ class Common_model extends CI_Model {
     function get_user_total(){
         $this->db->select('*');
         $this->db->select('count(*) as total');
-        $this->db->select('(SELECT count(skpd.id_satker)
-                            FROM skpd 
-                            WHERE (skpd.status = 1)
+        $this->db->select('(SELECT count(users.id_satker)
+                            FROM users 
+                            WHERE (users.status = 1)
                             )
                             AS active_user',TRUE);
 
-        $this->db->select('(SELECT count(skpd.id_satker)
-                            FROM skpd
-                            WHERE (skpd.status = 0)
+        $this->db->select('(SELECT count(users.id_satker)
+                            FROM users
+                            WHERE (users.status = 0)
                             )
                             AS inactive_user',TRUE);
 
-        $this->db->select('(SELECT count(skpd.id_satker)
-                            FROM skpd
-                            WHERE (skpd.user_role = "administrator")
+        $this->db->select('(SELECT count(users.id_satker)
+                            FROM users
+                            WHERE (users.user_role = "administrator")
                             )
                             AS admin',TRUE);
 
-        $this->db->from('user');
+        $this->db->from('users');
         $query = $this->db->get();
         $query = $query->row();  
         return $query;
