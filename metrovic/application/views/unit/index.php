@@ -106,8 +106,8 @@
 		<td><?php echo $u['kode_unit']; ?></td>
 		<td><?php echo $u['nama_unit']; ?></td>
 		<td>
-            <a href="<?php echo site_url('unit/edit/'.$u['id_unit']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('unit/remove/'.$u['id_unit']); ?>" class="btn btn-danger btn-xs">Delete</a>
+            <a href="<?php echo site_url('test-bootstrap/unit/edit/'.$u['id_unit']); ?>" class="btn btn-info btn-xs">Edit</a> 
+            <a href="<?php echo site_url('test-bootstrap/unit/remove/'.$u['id_unit']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>
