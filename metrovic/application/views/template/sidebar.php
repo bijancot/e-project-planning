@@ -95,7 +95,7 @@
                         </li> -->
 
                         <li>
-                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-map-marker"></i><span class="hide-menu">Maps</span></a>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-map-marker"></i><span class="hide-menu">Urusan</span></a>
                             <ul aria-expanded="false" class="collapse">
                             <li><a href="<?php echo base_url('test-bootstrap/urusan') ?>"><i class="fa fa-angle-right"></i> Daftar Urusan</a></li>
                                 <li><a href="<?php echo base_url('test-bootstrap/urusan/add') ?>"><i class="fa fa-angle-right"></i> Tambah Urusan</a></li>
