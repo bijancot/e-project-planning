@@ -46,7 +46,13 @@ class Bidang extends CI_Controller{
 			$data['all_urusan'] = $this->Urusan_model->get_all_urusan();
             
             $data['_view'] = 'bidang/add';
-            $this->load->view('layouts/main',$data);
+            //$this->load->view('layouts/main',$data);
+
+             $this->load->view('template/header');
+            $this->load->view('template/sidebar');
+            $this->load->view('bidang/add',$data);
+            $this->load->view('template/footer');
+
         }
     }  
 
