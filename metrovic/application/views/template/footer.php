@@ -82,6 +82,7 @@
     
     <script src="<?php echo base_url() ?>assets/plugins/Chart.js/chartjs.init.js"></script>
     <script src="<?php echo base_url() ?>assets/plugins/Chart.js/Chart.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 
     <!-- Invoice print JS -->
     <script src="<?php echo base_url() ?>assets/js/jquery.PrintArea.js" type="text/JavaScript"></script>
@@ -98,6 +99,45 @@
         });
     });
     </script>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $('#tanggal').datepicker({
+                 //merubah format tanggal datepicker ke dd-mm-yyyy
+                    format: "dd/mm/yyyy",
+                    //aktifkan kode dibawah untuk melihat perbedaanya, disable baris perintah diatasa
+                    //format: "dd-mm-yyyy",
+                    autoclose: true
+                });
+                $('#tanggal2').datepicker({
+                 //merubah format tanggal datepicker ke dd-mm-yyyy
+                    format: "dd/mm/yyyy",
+                    //aktifkan kode dibawah untuk melihat perbedaanya, disable baris perintah diatasa
+                    //format: "dd-mm-yyyy",
+                    autoclose: true
+                });
+                $('#tanggal3').datepicker({
+                 //merubah format tanggal datepicker ke dd-mm-yyyy
+                    format: "dd/mm/yyyy",
+                    //aktifkan kode dibawah untuk melihat perbedaanya, disable baris perintah diatasa
+                    //format: "dd-mm-yyyy",
+                    autoclose: true
+                });
+                $('#tanggal4').datepicker({
+                 //merubah format tanggal datepicker ke dd-mm-yyyy
+                    format: "dd/mm/yyyy",
+                    //aktifkan kode dibawah untuk melihat perbedaanya, disable baris perintah diatasa
+                    //format: "dd-mm-yyyy",
+                    autoclose: true
+                });
+                $('#tanggal5').datepicker({
+                 //merubah format tanggal datepicker ke dd-mm-yyyy
+                    format: "dd/mm/yyyy",
+                    //aktifkan kode dibawah untuk melihat perbedaanya, disable baris perintah diatasa
+                    //format: "dd-mm-yyyy",
+                    autoclose: true
+                });
+            });
+</script>
 
 
     <!-- Start Table js -->
