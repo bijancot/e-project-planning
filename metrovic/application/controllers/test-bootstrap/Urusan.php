@@ -42,8 +42,11 @@ class Urusan extends CI_Controller{
         }
         else
         {            
-            $data['_view'] = 'urusan/add';
-            $this->load->view('layouts/main',$data);
+                $data['_view'] = 'urusan/add';
+                $this->load->view('template/header');
+                $this->load->view('template/sidebar');
+                $this->load->view('urusan/add',$data);
+                $this->load->view('template/footer');
         }
     }  
 

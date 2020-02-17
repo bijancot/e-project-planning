@@ -50,7 +50,10 @@ class Unit extends CI_Controller{
 			$data['all_bidang'] = $this->Bidang_model->get_all_bidang();
             
             $data['_view'] = 'unit/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('template/header');
+            $this->load->view('template/sidebar');
+            $this->load->view('unit/add',$data);
+            $this->load->view('template/footer');
         }
     }  
 
@@ -82,7 +85,10 @@ class Unit extends CI_Controller{
 				$data['all_bidang'] = $this->Bidang_model->get_all_bidang();
 
                 $data['_view'] = 'unit/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('template/header');
+                $this->load->view('template/sidebar');
+                $this->load->view('unit/edit',$data);
+                $this->load->view('template/footer');
             }
         }
         else
