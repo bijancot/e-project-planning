@@ -101,7 +101,6 @@
 									<th>Rincian Paket</th>
 									<th>Detail Paket</th>
 									<th>Uang Paket</th>
-									<th>Actions</th>
 									<th style="width:12%">Opsi </th>
                                 </tr>
                             </thead>
@@ -128,37 +127,36 @@
 									<th>Rincian Paket</th>
 									<th>Detail Paket</th>
 									<th>Uang Paket</th>
-									<th>Actions</th>
 									<th style="width:12%">Opsi </th>
                                 </tr>
                             </tfoot>
 							<tbody>
 					<?php foreach($_paket as $u){ ?>
     <tr>
-		<td><?php echo $_['id_paket']; ?></td>
-		<td><?php echo $_['id_keterangan']; ?></td>
-		<td><?php echo $_['id_penyedia']; ?></td>
-		<td><?php echo $_['id_progress']; ?></td>
-		<td><?php echo $_['id_ktgori_pengadaan']; ?></td>
-		<td><?php echo $_['sumberdana']; ?></td>
-		<td><?php echo $_['volume']; ?></td>
-		<td><?php echo $_['tgl_kebutuhan']; ?></td>
-		<td><?php echo $_['tgl_awal_pkerjaan']; ?></td>
-		<td><?php echo $_['tgl_akhir_pkerjaan']; ?></td>
-		<td><?php echo $_['tgl_awal_pengadaan']; ?></td>
-		<td><?php echo $_['tgl_akhir_pengadaan']; ?></td>
-		<td><?php echo $_['jenis']; ?></td>
-		<td><?php echo $_['metode']; ?></td>
-		<td><?php echo $_['uraian']; ?></td>
-		<td><?php echo $_['tahun_anggaran']; ?></td>
-		<td><?php echo $_['createtime']; ?></td>
-		<td><?php echo $_['nama_paket']; ?></td>
-		<td><?php echo $_['rincian_paket']; ?></td>
-		<td><?php echo $_['detail_paket']; ?></td>
-		<td><?php echo $_['uang_paket']; ?></td>
+		<td><?php echo $u['id_paket']; ?></td>
+		<td><?php echo $u['id_keterangan']; ?></td>
+		<td><?php echo $u['id_penyedia']; ?></td>
+		<td><?php echo $u['id_progress']; ?></td>
+		<td><?php echo $u['id_ktgori_pengadaan']; ?></td>
+		<td><?php echo $u['sumberdana']; ?></td>
+		<td><?php echo $u['volume']; ?></td>
+		<td><?php echo $u['tgl_kebutuhan']; ?></td>
+		<td><?php echo $u['tgl_awal_pkerjaan']; ?></td>
+		<td><?php echo $u['tgl_akhir_pkerjaan']; ?></td>
+		<td><?php echo $u['tgl_awal_pengadaan']; ?></td>
+		<td><?php echo $u['tgl_akhir_pengadaan']; ?></td>
+		<td><?php echo $u['jenis']; ?></td>
+		<td><?php echo $u['metode']; ?></td>
+		<td><?php echo $u['uraian']; ?></td>
+		<td><?php echo $u['tahun_anggaran']; ?></td>
+		<td><?php echo $u['createtime']; ?></td>
+		<td><?php echo $u['nama_paket']; ?></td>
+		<td><?php echo $u['rincian_paket']; ?></td>
+		<td><?php echo $u['detail_paket']; ?></td>
+		<td><?php echo $u['uang_paket']; ?></td>
 		<td>
-            <a href="<?php echo site_url('_paket/edit/'.$_['id_paket']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('_paket/remove/'.$_['id_paket']); ?>" class="btn btn-danger btn-xs">Delete</a>
+            <a href="<?php echo site_url('test-bootstrap/_paket/edit/'.$u['id_paket']); ?>" class="btn btn-info btn-xs">Edit</a> 
+            <a href="<?php echo site_url('test-bootstrap/_paket/remove/'.$u['id_paket']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>
