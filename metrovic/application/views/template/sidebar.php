@@ -31,17 +31,17 @@
                         <li>
                             <a class="waves-effect waves-dark" href="<?php //echo base_url('admin/dashboard/backup') ?>" aria-expanded="false"><i class="fa fa-cloud-download"></i><span class="hide-menu">Backup Database</span></a>
                         </li> -->
-<!-- 
+
                         <li>
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Forms</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="<?php //echo base_url('admin/form/general') ?>"><i class="fa fa-angle-right"></i> Form Basic Layout </a></li>
-                                <li><a href="<?php //echo base_url('admin/form/addons') ?>"><i class="fa fa-angle-right"></i> Form Addons</a></li>
-                                <li><a href="<?php //echo base_url('admin/form/material') ?>"><i class="fa fa-angle-right"></i> Form Material</a></li>
-                                <li><a href="<?php //echo base_url('admin/form/validation') ?>"><i class="fa fa-angle-right"></i> Form Validation</a></li>
+                                <li><a href="<?php echo base_url('admin/form/general') ?>"><i class="fa fa-angle-right"></i> Form Basic Layout </a></li>
+                                <li><a href="<?php echo base_url('admin/form/addons') ?>"><i class="fa fa-angle-right"></i> Form Addons</a></li>
+                                <li><a href="<?php echo base_url('admin/form/material') ?>"><i class="fa fa-angle-right"></i> Form Material</a></li>
+                                <li><a href="<?php echo base_url('admin/form/validation') ?>"><i class="fa fa-angle-right"></i> Form Validation</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li> 
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Tables</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?php //echo base_url('admin/table/basic') ?>"><i class="fa fa-angle-right"></i> Basic Tables</a></li>
