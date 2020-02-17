@@ -80,7 +80,7 @@ class Ui extends CI_Controller {
     public function bootstrap_ui(){
         $data = array();
         $data['page_title'] = 'Bootstrap_ui';
-        $data['main_content'] = $this->load->view('admin/ui/Bootstrap_ui', $data, TRUE);
+        $data['main_content'] = $this->load->view('admin/ui/bootstrap_ui', $data, TRUE);
         $this->load->view('admin/index', $data);
     }
 
