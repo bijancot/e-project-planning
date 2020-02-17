@@ -65,14 +65,17 @@ class _paket extends CI_Controller{
 			$this->load->model('_keterangan_model');
 			$data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
 
-			$this->load->model('_penyedium_model');
-			$data['all__penyedia'] = $this->_penyedium_model->get_all__penyedia();
+			$this->load->model('penyedium_model');
+			$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
 
-			$this->load->model('Progres_model');
-			$data['all_progress'] = $this->Progres_model->get_all_progress();
+			// $this->load->model('Progres_model');
+			// $data['all_progress'] = $this->Progres_model->get_all_progress();
             
             $data['_view'] = '_paket/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('template/header');
+            $this->load->view('template/sidebar');
+            $this->load->view('_paket/add',$data);
+            $this->load->view('template/footer');
         }
     }  
 
@@ -119,8 +122,8 @@ class _paket extends CI_Controller{
 				$this->load->model('_keterangan_model');
 				$data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
 
-				$this->load->model('_penyedium_model');
-				$data['all__penyedia'] = $this->_penyedium_model->get_all__penyedia();
+				$this->load->model('penyedium_model');
+				$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
 
 				$this->load->model('Progres_model');
 				$data['all_progress'] = $this->Progres_model->get_all_progress();
