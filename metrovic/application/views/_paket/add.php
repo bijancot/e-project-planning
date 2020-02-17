@@ -151,7 +151,11 @@
 		<div class="form-group col-md-6">
 			<div class="col-md-12">
 				<h5>Volume</h5>
+
+				<div class="input-group">
+				<div class="input-group-addon"><i class="ti-shopping-cart"></i></div>
 				<input type="text" name="volume" value="<?php echo $this->input->post('volume'); ?>" class="form-control vertical-spin" id="volume" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
+			</div>
 			</div>
 		</div>
 		<div class="form-group col-md-5">
@@ -165,24 +169,32 @@
 <div class="form-group">
 	<label for="tgl_awal_pkerjaan" class="col-md-4 control-label">Tgl Awal Pkerjaan</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
 		<input type="text" class="form-control datepicker" name="tgl_awal_pkerjaan" value="<?php echo ($this->input->post('tgl_awal_pkerjaan') ? $this->input->post('tgl_awal_pkerjaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal2" />
 	</div>
 </div>
 <div class="form-group">
 	<label for="tgl_akhir_pkerjaan" class="col-md-4 control-label">Tgl Akhir Pkerjaan</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
 		<input type="text" class="form-control datepicker" name="tgl_akhir_pkerjaan" value="<?php echo ($this->input->post('tgl_akhir_pkerjaan') ? $this->input->post('tgl_akhir_pkerjaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal3" />
 	</div>
 </div>
 <div class="form-group">
 	<label for="tgl_awal_pengadaan" class="col-md-4 control-label">Tgl Awal Pengadaan</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
 		<input type="text" class="form-control datepicker" name="tgl_awal_pengadaan" value="<?php echo ($this->input->post('tgl_awal_pengadaan') ? $this->input->post('tgl_awal_pengadaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal4" />
 	</div>
 </div>
 <div class="form-group">
 	<label for="tgl_akhir_pengadaan" class="col-md-4 control-label">Tgl Akhir Pengadaan</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
 		<input type="text" class="form-control datepicker" name="tgl_akhir_pengadaan" value="<?php echo ($this->input->post('tgl_akhir_pengadaan') ? $this->input->post('tgl_akhir_pengadaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal5" />
 	</div>
 </div>
