@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2020 at 05:21 AM
+-- Generation Time: Feb 17, 2020 at 05:32 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -4112,7 +4112,7 @@ CREATE TABLE `_keterangan` (
 
 CREATE TABLE `_paket` (
   `id_paket` int(11) NOT NULL,
-  `id_keterangan` int(11) NOT NULL,
+  `id_keterangan` int(11) DEFAULT NULL,
   `id_ktgori_pengadaan` smallint(2) NOT NULL,
   `sumberdana` varchar(255) NOT NULL,
   `volume` varchar(255) NOT NULL,
@@ -4132,7 +4132,7 @@ CREATE TABLE `_paket` (
   `uang_paket` varchar(255) NOT NULL,
   `id_penyedia` int(11) DEFAULT NULL,
   `id_progress` int(11) DEFAULT NULL,
-  `id_kegiatan` int(11) NOT NULL
+  `id_kegiatan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
