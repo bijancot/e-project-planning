@@ -201,6 +201,8 @@
 <div class="form-group">
 	<label for="jenis" class="col-md-4 control-label">Jenis</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-archive"></i></div>
 		<select class="select2" name="jenis">
 			<option value="">Jenis Paket</option>
 			<option value="BARANG">BARANG</option>
@@ -211,9 +213,12 @@
 		<!-- <input type="text" name="jenis" value="<?php //echo $this->input->post('jenis'); ?>" class="form-control" id="jenis" /> -->
 	</div>
 </div>
+</div>
 <div class="form-group">
 	<div class="col-md-8">
 	<h5>Metode</h5>
+	<div class="input-group">
+				<div class="input-group-addon"><i class="ti-pencil"></i></div>
 		<select class="select2" name="metode">
 			<option value="">Metode yang digunakan</option>
 			<option value="PENUNJUKAN LANGSUNG">PENUNJUKAN LANGSUNG</option>
@@ -223,19 +228,26 @@
 			<option value="TENDER CEPAT"></option>
 			<option value="SELEKSI">SELEKSI</option>
 		</select>
-		<input type="text" name="metode" value="<?php echo $this->input->post('metode'); ?>" class="form-control" id="metode" />
 	</div>
 </div>
+</div>
+
 <div class="form-group">
+
 	<label for="uraian" class="col-md-4 control-label">Uraian</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-comment-alt"></i></div>
 		<textarea name="uraian" class="form-control"><?php echo $this->input->post('uraian'); ?></textarea>
 		<!-- <input type="text" name="uraian" value="<?php //echo $this->input->post('uraian'); ?>" class="form-control" id="uraian" /> -->
 	</div>
 </div>
+</div>
 <div class="form-group">
+
 	<h5 style="padding-left:15px">Tahun Anggaran</h5>
 		<div class="col-md-12">
+
 			<label class="custom-control custom-radio">
 				<input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : date("Y")); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
 					<span class="custom-control-indicator"></span>
@@ -251,15 +263,21 @@
 <div class="form-group">
 	<label for="createtime" class="col-md-4 control-label">Createtime</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
 		<input type="text" class="form-control datepicker" id="tanggal5" name="createtime" value="<?php echo ($this->input->post('createtime') ? $this->input->post('createtime') : date("d/m/Y")); ?>" class="form-control" readonly/>
 	</div>
+</div>
 </div>
 <div class="form-group">
 	<label for="nama_paket" class="col-md-4 control-label">Nama Paket</label>
 	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-archive"></i></div>
 		<input type="text" name="nama_paket" value="<?php echo $this->input->post('nama_paket'); ?>" class="form-control" id="nama_paket" />
 	</div>
 </div>
+
 <!-- <div class="form-group">
 	<label for="rincian_paket" class="col-md-4 control-label">Rincian Paket</label>
 	<div class="col-md-8">
@@ -295,4 +313,8 @@
 
     <!-- End Page Content -->
 
+</div>
+</div>
+</div>
+</div>
 </div>
