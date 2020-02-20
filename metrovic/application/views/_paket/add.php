@@ -133,6 +133,8 @@
 
 	<div class="form-group col-md-6">
 		<h5>Sumber Dana</h5>
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-money"></i></div>
 			<select class="select2 col-md-8" id="sumberdana" >
 				<option value="">Sumber Dana</option>
 				<option value="APBD">APBD</option>
@@ -148,6 +150,7 @@
 				<option value="11">LAINYA</option> -->
 			</select>
 	</div>
+</div>
 		<div class="form-group col-md-6">
 			<div class="col-md-12">
 				<h5>Volume</h5>
