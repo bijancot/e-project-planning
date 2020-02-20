@@ -115,6 +115,27 @@
 	</div>
 </div> -->
 <div class="row">
+	<div class="col-md-6" style="border:1px solid black">
+		<div class="form-group">
+		<h5>Nama Paket</h5>
+			<div class="input-group">
+					<div class="input-group-addon"><i class="ti-archive"></i></div>
+			<input type="text" name="nama_paket" value="<?php echo $this->input->post('nama_paket'); ?>" class="form-control" id="nama_paket" />
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6" style="border:1px solid black">
+		<div class="form-group">
+			<h5>Tanggal Pembuatan</h5>
+			<div class="col-md-5">
+				<div class="input-group">
+					<div class="input-group-addon"><i class="ti-calendar"></i></div>
+				<input type="text" class="form-control datepicker" id="tanggal9" name="createtime" value="<?php echo ($this->input->post('createtime') ? $this->input->post('createtime') : date("d/m/Y")); ?>" class="form-control" readonly/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<div class="form-group col-md-6">
 		<div class="col-md-12">
 		<h5>Kategori Penyedia</h5>
@@ -135,7 +156,7 @@
 		<h5>Sumber Dana</h5>
 		<div class="input-group">
 				<div class="input-group-addon"><i class="ti-money"></i></div>
-			<select class="select2 col-md-8" id="sumberdana" >
+			<select class="select2 col-md-12" id="sumberdana" >
 				<option value="">Sumber Dana</option>
 				<option value="APBD">APBD</option>
 				<option value="APBN">APBN</option>
@@ -150,18 +171,15 @@
 				<option value="11">LAINYA</option> -->
 			</select>
 	</div>
-</div>
 		<div class="form-group col-md-6">
-			<div class="col-md-12">
 				<h5>Volume</h5>
 
 				<div class="input-group">
 				<div class="input-group-addon"><i class="ti-shopping-cart"></i></div>
 				<input type="text" name="volume" value="<?php echo $this->input->post('volume'); ?>" class="form-control vertical-spin" id="volume" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
 			</div>
-			</div>
 		</div>
-		<div class="form-group col-md-5">
+		<div class="form-group col-md-6">
 		<h5>Tanggal Kebutuhan</h5>
 				<div class="input-group">
 				<div class="input-group-addon"><i class="ti-calendar"></i></div>
@@ -264,7 +282,7 @@
 		</div>
 </div>
 <div class="form-group">
-	<label for="createtime" class="col-md-4 control-label">Createtime</label>
+	<h5>Tanggal Pembuatan</h5>
 	<div class="col-md-8">
 		<div class="input-group">
 				<div class="input-group-addon"><i class="ti-calendar"></i></div>
