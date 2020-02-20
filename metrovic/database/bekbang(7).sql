@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2020 at 05:32 AM
+-- Generation Time: Feb 20, 2020 at 08:55 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -342,6 +342,36 @@ CREATE TABLE `kec_kel` (
   `nama_kecamatan` varchar(255) NOT NULL,
   `nama_kelurahan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kec_kel`
+--
+
+INSERT INTO `kec_kel` (`id_kelurahan`, `nama_kecamatan`, `nama_kelurahan`) VALUES
+(1, 'Batu', 'Ngaglik'),
+(2, 'Batu', 'Sisir'),
+(3, 'Batu', 'Songgokerto'),
+(4, 'Batu', 'Temas'),
+(5, 'Batu', 'Oro-oro Ombo'),
+(6, 'Batu', 'Pesanggrahan'),
+(7, 'Batu', 'Sidomulyo'),
+(8, 'Batu', 'Sumberejo'),
+(9, 'Junrejo', 'Dadaprejo'),
+(10, 'Junrejo', 'Beji'),
+(11, 'Junrejo', 'Junrejo'),
+(12, 'Junrejo', 'Mojorejo'),
+(13, 'Junrejo', 'Pendem'),
+(14, 'Junrejo', 'Tlekung'),
+(15, 'Junrejo', 'Torongrejo'),
+(16, 'Bumiaji', 'Bulukerto'),
+(17, 'Bumiaji', 'Bumiaji'),
+(18, 'Bumiaji', 'Giripurno'),
+(19, 'Bumiaji', 'Gunungsari'),
+(20, 'Bumiaji', 'Pandanrejo'),
+(21, 'Bumiaji', 'Punten'),
+(22, 'Bumiaji', 'Sumbergondo'),
+(23, 'Bumiaji', 'Tulungrejo'),
+(24, 'Bumiaji', 'Sumber Brantas');
 
 -- --------------------------------------------------------
 
@@ -4427,7 +4457,7 @@ ALTER TABLE `det_paket`
 -- AUTO_INCREMENT for table `kec_kel`
 --
 ALTER TABLE `kec_kel`
-  MODIFY `id_kelurahan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelurahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `lokasi`
