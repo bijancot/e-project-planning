@@ -123,7 +123,100 @@
 			<input type="text" name="nama_paket" value="<?php echo $this->input->post('nama_paket'); ?>" class="form-control" id="nama_paket" />
 			</div>
 		</div>
+		<div class="form-group">
+	<h5>Jenis</h5>
+	<div>
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-archive"></i></div>
+		<select class="select2" name="jenis">
+			<option value="">Jenis Paket</option>
+			<option value="BARANG">BARANG</option>
+            <option value="PEKERJAAN KONSTRUKSI">PEKERJAAN KONSTRUKSI</option>
+            <option value="JASA KONSULTANSI">JASA KONSULTANSI</option>
+            <option value="JASA LAINNYA">JASA LAINNYA</option>
+		</select>
+		<!-- <input type="text" name="jenis" value="<?php //echo $this->input->post('jenis'); ?>" class="form-control" id="jenis" /> -->
 	</div>
+</div>
+</div>
+		<div class="form-group">
+			<h5>Volume</h5>
+
+				<div class="input-group">
+				<div class="input-group-addon"><i class="ti-shopping-cart"></i></div>
+				<input type="text" name="volume" value="<?php echo $this->input->post('volume'); ?>" class="form-control vertical-spin" id="volume" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
+			</div>
+		</div>
+		<div class="form-group ">
+		<h5>Sumber Dana</h5>
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-money"></i></div>
+			<select class="select2 col-md-12" id="sumberdana" >
+				<option value="">Sumber Dana</option>
+				<option value="APBD">APBD</option>
+				<option value="APBN">APBN</option>
+				<!-- <option value="3">PHLN</option>
+				<option value="4">PNBP</option>
+				<option value="5">APBDP</option>
+				<option value="6">APBNP</option>
+				<option value="7">BLU</option>
+				<option value="8">BLUD</option>
+				<option value="9">BUMN</option>
+				<option value="10">BUMD</option>
+				<option value="11">LAINYA</option> -->
+			</select>
+	</div>
+	</div>
+	<div class="form-group">
+	<div >
+	<h5>Metode</h5>
+	<div class="input-group">
+				<div class="input-group-addon"><i class="ti-pencil"></i></div>
+		<select class="select2" name="metode">
+			<option value="">Metode yang digunakan</option>
+			<option value="PENUNJUKAN LANGSUNG">PENUNJUKAN LANGSUNG</option>
+			<option value="PENGADAAN LANGSUNG">PENGADAAN LANGSUNG</option>
+			<option value="E-PURCHASING">E-PURCHASING</option>
+			<option value="TENDER">TENDER</option>
+			<option value="TENDER CEPAT"></option>
+			<option value="SELEKSI">SELEKSI</option>
+		</select>
+	</div>
+</div>
+</div>
+	<div class="form-group">
+
+	<h5>Tahun Anggaran</h5>
+		<div class="col-md-12">
+
+			<label class="custom-control custom-radio">
+				<input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : date("Y")); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description"><?php echo date("Y");?></span>
+			</label>
+			<!-- <label class="custom-control custom-radio">
+				<input type="radio" name="id_ktgori_pengadaan" value="<?php //echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Swakelola"); ?>" class="custom-control-input" id="id_ktgori_pengadaan2"/>
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Swakelola</span>
+			</label> -->
+		</div>
+</div>
+<div>
+	<div>
+		<h5>Kategori Penyedia</h5>
+			<label class="custom-control custom-radio">
+				<input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Penyedia"); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Penyedia</span>
+			</label>
+			<label class="custom-control custom-radio">
+				<input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Swakelola"); ?>" class="custom-control-input" id="id_ktgori_pengadaan2"/>
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Swakelola</span>
+			</label>
+		</div>
+	</div>
+</div>
 	<div class="col-md-6" style="border:1px solid black">
 		<div class="form-group">
 			<h5>Tanggal Pembuatan</h5>
@@ -134,7 +227,51 @@
 				</div>
 			</div>
 		</div>
+		<div class="form-group col-md-6">
+		<h5>Tanggal Kebutuhan</h5>
+				<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
+				<input type="text" class="form-control datepicker" name="tgl_kebutuhan" value="<?php echo ($this->input->post('tgl_kebutuhan') ? $this->input->post('tgl_kebutuhan') : date("d/m/Y")); ?>" class="form-control" id="tanggal" />
+				</div>
+		</div>
+
+		<div class="form-group">
+	<label for="tgl_awal_pkerjaan" class="col-md-5 control-label">Tgl Awal Pekerjaan</label>
+	<div class="col-md-5">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
+		<input type="text" class="form-control datepicker" name="tgl_awal_pkerjaan" value="<?php echo ($this->input->post('tgl_awal_pkerjaan') ? $this->input->post('tgl_awal_pkerjaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal2" />
 	</div>
+</div>
+</div>
+<div class="form-group">
+	<label for="tgl_akhir_pkerjaan" class="col-md-4 control-label">Tgl Akhir Pekerjaan</label>
+	<div class="col-md-5">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
+		<input type="text" class="form-control datepicker" name="tgl_akhir_pkerjaan" value="<?php echo ($this->input->post('tgl_akhir_pkerjaan') ? $this->input->post('tgl_akhir_pkerjaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal3" />
+	</div>
+</div>
+</div>
+	<div class="form-group">
+	<label for="tgl_awal_pengadaan" class="col-md-4 control-label">Tgl Awal Pengadaan</label>
+	<div class="col-md-5">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
+		<input type="text" class="form-control datepicker" name="tgl_awal_pengadaan" value="<?php echo ($this->input->post('tgl_awal_pengadaan') ? $this->input->post('tgl_awal_pengadaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal4" />
+	</div>
+</div>
+</div>
+<div class="form-group">
+	<label for="tgl_akhir_pengadaan" class="col-md-4 control-label">Tgl Akhir Pengadaan</label>
+	<div class="col-md-8">
+		<div class="input-group">
+				<div class="input-group-addon"><i class="ti-calendar"></i></div>
+		<input type="text" class="form-control datepicker" name="tgl_akhir_pengadaan" value="<?php echo ($this->input->post('tgl_akhir_pengadaan') ? $this->input->post('tgl_akhir_pengadaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal5" />
+	</div>
+</div>
+</div>
+</div>
 </div>
 	<div class="form-group col-md-6">
 		<div class="col-md-12">
