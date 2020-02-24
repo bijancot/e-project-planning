@@ -85,7 +85,10 @@ class _kegiatan extends CI_Controller{
 				$data['all__program'] = $this->_program_model->get_all__program();
 
                 $data['_view'] = '_kegiatan/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('template/header');
+                $this->load->view('template/sidebar');
+                $this->load->view('_kegiatan/edit',$data);
+                $this->load->view('template/footer');
             }
         }
         else
