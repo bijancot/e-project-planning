@@ -85,7 +85,6 @@
 									<th>Kd Keg</th>
 									<th>Program</th>
 									<th>Kegiatan</th>
-									<th>Actions</th>
 									<th style="width:12%">Opsi </th>
                                 </tr>
                             </thead>
@@ -96,7 +95,6 @@
 									<th>Kd Keg</th>
 									<th>Program</th>
 									<th>Kegiatan</th>
-									<th>Actions</th>
 									<th style="width:12%">Opsi </th>
                                 </tr>
                             </tfoot>
