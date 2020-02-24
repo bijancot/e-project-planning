@@ -103,7 +103,7 @@
                         </li>
 
                         <li>
-                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-box"></i><span class="hide-menu">Urusan</span></a>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-map-marker"></i><span class="hide-menu">Paket</span></a>
                             <ul aria-expanded="false" class="collapse">
                             <li><a href="<?php echo base_url('test-bootstrap/_paket') ?>"><i class="fa fa-angle-right"></i> Daftar Paket</a></li>
                                 <li><a href="<?php echo base_url('test-bootstrap/_paket/add') ?>"><i class="fa fa-angle-right"></i> Tambah Paket</a></li>
