@@ -44,6 +44,7 @@
             <a href="<?php echo base_url('admin/user') ?>" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Add New User</a>
             <?php endif; ?>
             <?php endif ?>
+            <h3>Data Paket</h3>
             <div class="table-responsive m-t-40">
                <?php echo form_open('test-bootstrap/_paket/add',array("class"=>"form-horizontal")); ?>
                <!-- <div class="form-group">
@@ -514,6 +515,33 @@
                                  </div>
                               </div>
                               <?php echo form_close(); ?>
+                           </div>
+                           <br/>
+                           <h3>Detail Lokasi</h3>
+                           <div class="table-responsive m-t-40">
+                           <table class="table table-striped table-bordered">
+                              <tr>
+                                 <th>ID</th>
+                                 <th>Id Paket</th>
+                                 <th>Id Kec Kel</th>
+                                 <th>Keterangan</th>
+                                 <th>CreatedDate</th>
+                                 <th>Actions</th>
+                              </tr>
+                              <?php foreach($tr_lokasi_paket as $t){ ?>
+                              <tr>
+                                 <td><?php echo $t['id']; ?></td>
+                                 <td><?php echo $t['id_paket']; ?></td>
+                                 <td><?php echo $t['id_kec_kel']; ?></td>
+                                 <td><?php echo $t['keterangan']; ?></td>
+                                 <td><?php echo $t['createdDate']; ?></td>
+                                 <td>
+                                       <a href="<?php echo site_url('tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs">Edit</a> 
+                                       <a href="<?php echo site_url('tr_lokasi_paket/remove/'.$t['id']); ?>" class="btn btn-danger btn-xs">Delete</a>
+                                 </td>
+                              </tr>
+                              <?php } ?>
+                           </table>
                            </div>
                         </div>
                      </div>
