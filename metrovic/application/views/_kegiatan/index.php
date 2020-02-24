@@ -108,7 +108,6 @@
 		<td><?php echo $_['kegiatan']; ?></td>
 		<td>
             <a href="<?php echo site_url('_kegiatan/edit/'.$_['id_kegiatan']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('_kegiatan/remove/'.$_['id_kegiatan']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>

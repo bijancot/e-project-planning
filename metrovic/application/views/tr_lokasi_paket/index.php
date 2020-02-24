@@ -58,7 +58,6 @@
 		<td><?php echo $t['createdDate']; ?></td>
 		<td>
             <a href="<?php echo site_url('tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('tr_lokasi_paket/remove/'.$t['id']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>

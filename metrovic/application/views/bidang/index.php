@@ -104,7 +104,6 @@
 		<td><?php echo $b['nama_bidang']; ?></td>
 		<td>
             <a href="<?php echo site_url('test-bootstrap/bidang/edit/'.$b['id_bidang']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('test-bootstrap/bidang/remove/'.$b['id_bidang']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>

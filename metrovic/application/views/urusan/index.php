@@ -98,7 +98,6 @@
         <td><?php echo $u['nama_urusan']; ?></td>
         <td>
             <a href="<?php echo site_url('test-bootstrap/urusan/edit/'.$u['id_urusan']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('test-bootstrap/urusan/remove/'.$u['id_urusan']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
     <?php } ?>

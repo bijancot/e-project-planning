@@ -156,7 +156,6 @@
 		<td><?php echo $u['uang_paket']; ?></td>
 		<td>
             <a href="<?php echo site_url('test-bootstrap/_paket/edit/'.$u['id_paket']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('test-bootstrap/_paket/remove/'.$u['id_paket']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>

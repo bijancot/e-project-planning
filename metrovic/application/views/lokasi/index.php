@@ -20,7 +20,6 @@
 		<td><?php echo $l['detail_lok']; ?></td>
 		<td>
             <a href="<?php echo site_url('lokasi/edit/'.$l['id_lokasi']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('lokasi/remove/'.$l['id_lokasi']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>

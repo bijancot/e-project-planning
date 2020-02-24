@@ -109,7 +109,6 @@
 		<td><?php echo $_['id_p_swakelola']; ?></td>
 		<td>
             <a href="<?php echo site_url('_jenis_penyedium/edit/'.$_['id_jenis_penyedia']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('_jenis_penyedium/remove/'.$_['id_jenis_penyedia']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>

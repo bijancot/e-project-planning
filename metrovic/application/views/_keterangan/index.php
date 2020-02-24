@@ -120,7 +120,6 @@
 		<td><?php echo $_['total']; ?></td>
 		<td>
             <a href="<?php echo site_url('_keterangan/edit/'.$_['id_keterangan']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('_keterangan/remove/'.$_['id_keterangan']); ?>" class="btn btn-danger btn-xs">Delete</a>
         </td>
     </tr>
 	<?php } ?>
