@@ -117,7 +117,7 @@ class _paket extends CI_Controller{
                 );
 
                 $this->_paket_model->update__paket($id_paket,$params);            
-                redirect('_paket/index');
+                redirect('test-bootstrap/_paket/index');
             }
             else
             {
@@ -158,6 +158,28 @@ class _paket extends CI_Controller{
         }
         else
             show_error('The _paket you are trying to delete does not exist.');
+    }
+
+    function detail($id_paket){
+        // check if the _paket exists before trying to edit it
+        $data['_paket'] = $this->_paket_model->get__paket($id_paket);
+        
+        
+				$this->load->model('_keterangan_model');
+				$data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
+
+				$this->load->model('penyedium_model');
+				$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
+
+				$this->load->model('Progres_model');
+				$data['all_progress'] = $this->Progres_model->get_all_progress();
+
+                $data['_view'] = '_paket/edit';
+                 $this->load->view('template/header');
+                $this->load->view('template/sidebar');
+                $this->load->view('_paket/detail',$data);
+                $this->load->view('template/addjs');
+               
     }
     
 }
