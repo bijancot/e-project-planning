@@ -62,9 +62,11 @@ class _paket extends CI_Controller{
         }
         else
         {
-			$this->load->model('_keterangan_model');
+			$this->load->model('Tr_lokasi_paket_model');
+            $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->get_all_tr_lokasi_paket();
+            
+            $this->load->model('_keterangan_model');
 			$data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
-
 			$this->load->model('penyedium_model');
 			$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
 
