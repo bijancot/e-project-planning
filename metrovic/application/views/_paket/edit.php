@@ -110,11 +110,26 @@
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-archive"></i></div>
                               <select class="select2" name="jenis">
-                                 <option value="">Jenis Paket</option>
-                                 <option value="BARANG">BARANG</option>
-                                 <option value="PEKERJAAN KONSTRUKSI">PEKERJAAN KONSTRUKSI</option>
-                                 <option value="JASA KONSULTANSI">JASA KONSULTANSI</option>
-                                 <option value="JASA LAINNYA">JASA LAINNYA</option>
+								  <?php
+								 	$option = array(
+										'BARANG'=>'BARANG',
+										'PEKERJAAN KONSTRUKSI'=>'PEKERJAAN KONSTRUKSI',
+										'JASA KONSULTANSI'=>'JASA KONSULTANSI',
+										'JASA LAINNYA'=>'JASA LAINNYA',
+									 );
+									 
+									 $op = array_keys($option);
+
+									 for($r=0;$r<sizeof($op);$r++){
+										if($op[$i]==$_paket['jenis']){
+											$selected='selected = "selected"';
+										}
+										else{
+											$selected='';
+										}
+										echo '<option value='.$op[$r].' '.$selected.'>'.$op[$r].'</option>';
+									 }
+								 ?>
                               </select>
                               <!-- <input type="text" name="jenis" value="<?php //echo $this->input->post('jenis'); ?>" class="form-control" id="jenis" /> -->
                            </div>
@@ -134,16 +149,30 @@
 							<h5>Sumber Dana</h5>
 							<div class="input-group">
 							<div class="input-group-addon"><i class="ti-money"></i></div>
+							<select id="sumberdana" name="sumberdana" class="select2 col-md-12">
+							<option value=" ">Sumber Dana</option>
 							<?php
 							
 							$options = array(
-								' '		=> 'Sumber Dana',
 								'APBD'	=> 'APBD',
 								'APBN'	=> 'APBN',
 							);
 
-							echo form_dropdown('sumberdana', $options," ",'id="sumberdana" class="select2 col-md-12"');
+							$op = array_keys($options);
+
+							for($i=0;$i<sizeof($op);$i++){
+								if($op[$i]==$_paket['sumberdana']){
+									$selected='selected = "selected"';
+								}
+								else{
+									$selected='';
+								}
+								echo '<option value='.$op[$i].' '.$selected.'>'.$op[$i].'</option>';
+							}
+
+							//echo form_dropdown('sumberdana', $options," ",$selected);
 							?>
+							</select>
 							<!-- <select class="select2 col-md-12" id="sumberdana" name="sumberdana">
 								<option value="">Sumber Dana</option>
 								<option value="APBD">APBD</option>
@@ -166,10 +195,10 @@
                            <h5>Metode</h5>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-pencil"></i></div>
+							  <select name="metode" class="select2">
 							  <?php
 							
 									$options = array(
-										' '		=> 'Metode',
 										'PENUNJUKAN LANGSUNG'	=> 'PENUNJUKAN LANGSUNG',
 										'PENGADAAN LANGSUNG'	=> 'PENGADAAN LANGSUNG',
 										'E-PURCHASING'	=> 'E-PURCHASING',
@@ -177,9 +206,20 @@
 										'TENDER CEPAT'	=> 'TENDER CEPAT',
 										'SELEKSI'	=> 'SELEKSI',
 									);
+									$op = array_keys($options);
 
-							echo form_dropdown('metode', $options," ",'class="select2 col-md-12"');
+							for($i=0;$i<sizeof($op);$i++){
+								if($op[$i]==$_paket['metode']){
+									$selected='selected = "selected"';
+								}
+								else{
+									$selected='';
+								}
+								echo '<option value='.$op[$i].' '.$selected.'>'.$op[$i].'</option>';
+							}
+							//echo form_dropdown('metode', $options," ",'class="select2 col-md-12"');
 							?>
+							</select>
                               <!-- <select class="select2" name="metode">
                                  <option value="">Metode yang digunakan</option>
                                  <option value="PENUNJUKAN LANGSUNG">PENUNJUKAN LANGSUNG</option>
@@ -199,7 +239,10 @@
                         <h5>Tahun Anggaran</h5>
                         <div class="col-md-12">
                            <label class="custom-control custom-radio">
-                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : $_paket['tahun_anggaran']); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
+						   <input type="radio" name="tahun_anggaran" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : $_paket['tahun_anggaran']); ?>" <?php
+						 	if($_paket['tahun_anggaran']==date("Y")){
+								echo "checked";
+							}  ?> class="custom-control-input" id="tahun_anggaran"/>
                            <span class="custom-control-indicator"></span>
                            <span class="custom-control-description"><?php echo date("Y");?></span>
                            </label>
@@ -215,12 +258,24 @@
                         <div >
                            <h5>Kategori Penyedia</h5>
                            <label class="custom-control custom-radio">
-                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Penyedia"); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
+						   <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Penyedia");?>" 
+						   <?php 
+						 	if($_paket['id_ktgori_pengadaan']=="Penyedia"){
+								echo "checked";
+							}  
+						   ?> 
+						   class="custom-control-input" id="id_ktgori_pengadaan1"/>
                            <span class="custom-control-indicator"></span>
                            <span class="custom-control-description">Penyedia</span>
                            </label>
                            <label class="custom-control custom-radio">
-                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Swakelola"); ?>" class="custom-control-input" id="id_ktgori_pengadaan2"/>
+                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Swakelola"); ?>" class="custom-control-input" 
+						   <?php 
+						 	if($_paket['id_ktgori_pengadaan']=="Swakelola"){
+								echo "checked";
+							}  
+						   ?> 
+						   id="id_ktgori_pengadaan2"/>
                            <span class="custom-control-indicator"></span>
                            <span class="custom-control-description">Swakelola</span>
                            </label>
@@ -305,7 +360,7 @@
                               <p>Uraian</p>
                                  <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-comment-alt"></i></div>
-                                    <textarea name="uraian" style="height:200px" class="form-control"><?php echo $this->input->post('uraian'); ?></textarea>
+                                    <textarea name="uraian" style="height:200px" class="form-control"><?php echo ($this->input->post('uraian') ? $this->input->post('uraian') : $_paket['uraian']); ?></textarea>
                                     <!-- <input type="text" name="uraian" value="<?php //echo $this->input->post('uraian'); ?>" class="form-control" id="uraian" /> -->
                                  </div>
                            </div>
@@ -481,7 +536,7 @@
                                           </button>
                                        </div>
                                        <div class="modal-body">
-                                          <?php $this->load->view("/lokasi/add");?>
+                                          <?php //$this->load->view("/lokasi/add");?>
                                        </div>
                                        <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

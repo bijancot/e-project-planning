@@ -44,9 +44,8 @@
             <a href="<?php echo base_url('admin/user') ?>" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Add New User</a>
             <?php endif; ?>
             <?php endif ?>
-            <h3>Data Paket</h3>
             <div class="table-responsive m-t-40">
-               <?php echo form_open('test-bootstrap/_paket/add',array("class"=>"form-horizontal")); ?>
+               <?php echo form_open('test-bootstrap/_paket/edit/'.$_paket['id_paket'],array("class"=>"form-horizontal")); ?>
                <!-- <div class="form-group">
                   <label for="id_keterangan" class="col-md-4 control-label"> Keterangan</label>
                   <div class="col-md-8">
@@ -101,7 +100,7 @@
                         <h5>Nama Paket</h5>
                         <div class="input-group">
                            <div class="input-group-addon"><i class="ti-archive"></i></div>
-                           <input type="text" name="nama_paket" value="<?php echo $this->input->post('nama_paket'); ?>" class="form-control" id="nama_paket" />
+                           <input type="text" name="nama_paket" value="<?php echo ($this->input->post('nama_paket') ? $this->input->post('nama_paket') : $_paket['nama_paket']); ?>" class="form-control" id="nama_paket" readonly/>
                         </div>
                      </div>
 					 <div class="row">
@@ -110,12 +109,27 @@
                         <div>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-archive"></i></div>
-                              <select class="select2" name="jenis">
-                                 <option value="">Jenis Paket</option>
-                                 <option value="BARANG">BARANG</option>
-                                 <option value="PEKERJAAN KONSTRUKSI">PEKERJAAN KONSTRUKSI</option>
-                                 <option value="JASA KONSULTANSI">JASA KONSULTANSI</option>
-                                 <option value="JASA LAINNYA">JASA LAINNYA</option>
+                              <select class="select2" name="jenis" id="jenis1">
+								  <?php
+								 	$option = array(
+										'BARANG'=>'BARANG',
+										'PEKERJAAN KONSTRUKSI'=>'PEKERJAAN KONSTRUKSI',
+										'JASA KONSULTANSI'=>'JASA KONSULTANSI',
+										'JASA LAINNYA'=>'JASA LAINNYA',
+									 );
+									 
+									 $op = array_keys($option);
+
+									 for($r=0;$r<sizeof($op);$r++){
+										if($op[$i]==$_paket['jenis']){
+											$selected='selected = "selected"';
+										}
+										else{
+											$selected='';
+										}
+										echo '<option value='.$op[$r].' '.$selected.'>'.$op[$r].'</option>';
+									 }
+								 ?>
                               </select>
                               <!-- <input type="text" name="jenis" value="<?php //echo $this->input->post('jenis'); ?>" class="form-control" id="jenis" /> -->
                            </div>
@@ -126,7 +140,7 @@
                         <h5>Volume</h5>
                         <div class="input-group">
                            <div class="input-group-addon"><i class="ti-shopping-cart"></i></div>
-                           <input type="text" name="volume" value="<?php echo $this->input->post('volume'); ?>" class="form-control vertical-spin" id="volume" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
+                           <input type="text" name="volume" value="<?php echo ($this->input->post('volume') ? $this->input->post('volume') : $_paket['volume']); ?>" class="form-control vertical-spin" id="volume" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
                         </div>
                      </div>
 					 </div>
@@ -135,16 +149,30 @@
 							<h5>Sumber Dana</h5>
 							<div class="input-group">
 							<div class="input-group-addon"><i class="ti-money"></i></div>
+							<select id="sumberdana" name="sumberdana" class="select2 col-md-12">
+							<option value=" ">Sumber Dana</option>
 							<?php
 							
 							$options = array(
-								' '		=> 'Sumber Dana',
 								'APBD'	=> 'APBD',
 								'APBN'	=> 'APBN',
 							);
 
-							echo form_dropdown('sumberdana', $options," ",'id="sumberdana" class="select2 col-md-12"');
+							$op = array_keys($options);
+
+							for($i=0;$i<sizeof($op);$i++){
+								if($op[$i]==$_paket['sumberdana']){
+									$selected='selected = "selected"';
+								}
+								else{
+									$selected='';
+								}
+								echo '<option value='.$op[$i].' '.$selected.'>'.$op[$i].'</option>';
+							}
+
+							//echo form_dropdown('sumberdana', $options," ",$selected);
 							?>
+							</select>
 							<!-- <select class="select2 col-md-12" id="sumberdana" name="sumberdana">
 								<option value="">Sumber Dana</option>
 								<option value="APBD">APBD</option>
@@ -167,10 +195,10 @@
                            <h5>Metode</h5>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-pencil"></i></div>
+							  <select name="metode" class="select2">
 							  <?php
 							
 									$options = array(
-										' '		=> 'Metode',
 										'PENUNJUKAN LANGSUNG'	=> 'PENUNJUKAN LANGSUNG',
 										'PENGADAAN LANGSUNG'	=> 'PENGADAAN LANGSUNG',
 										'E-PURCHASING'	=> 'E-PURCHASING',
@@ -178,9 +206,20 @@
 										'TENDER CEPAT'	=> 'TENDER CEPAT',
 										'SELEKSI'	=> 'SELEKSI',
 									);
+									$op = array_keys($options);
 
-							echo form_dropdown('metode', $options," ",'class="select2 col-md-12"');
+							for($i=0;$i<sizeof($op);$i++){
+								if($op[$i]==$_paket['metode']){
+									$selected='selected = "selected"';
+								}
+								else{
+									$selected='';
+								}
+								echo '<option value='.$op[$i].' '.$selected.'>'.$op[$i].'</option>';
+							}
+							//echo form_dropdown('metode', $options," ",'class="select2 col-md-12"');
 							?>
+							</select>
                               <!-- <select class="select2" name="metode">
                                  <option value="">Metode yang digunakan</option>
                                  <option value="PENUNJUKAN LANGSUNG">PENUNJUKAN LANGSUNG</option>
@@ -200,7 +239,10 @@
                         <h5>Tahun Anggaran</h5>
                         <div class="col-md-12">
                            <label class="custom-control custom-radio">
-                           <input type="radio" name="tahun_anggaran" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : date("Y")); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
+						   <input type="radio" name="tahun_anggaran" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : $_paket['tahun_anggaran']); ?>" <?php
+						 	if($_paket['tahun_anggaran']==date("Y")){
+								echo "checked";
+							}  ?> class="custom-control-input" id="tahun_anggaran"/>
                            <span class="custom-control-indicator"></span>
                            <span class="custom-control-description"><?php echo date("Y");?></span>
                            </label>
@@ -216,12 +258,24 @@
                         <div >
                            <h5>Kategori Penyedia</h5>
                            <label class="custom-control custom-radio">
-                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Penyedia"); ?>" class="custom-control-input" id="id_ktgori_pengadaan1"/>
+						   <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Penyedia");?>" 
+						   <?php 
+						 	if($_paket['id_ktgori_pengadaan']=="Penyedia"){
+								echo "checked";
+							}  
+						   ?> 
+						   class="custom-control-input" id="id_ktgori_pengadaan1"/>
                            <span class="custom-control-indicator"></span>
                            <span class="custom-control-description">Penyedia</span>
                            </label>
                            <label class="custom-control custom-radio">
-                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Swakelola"); ?>" class="custom-control-input" id="id_ktgori_pengadaan2"/>
+                           <input type="radio" name="id_ktgori_pengadaan" value="<?php echo ($this->input->post('id_ktgori_pengadaan') ? $this->input->post('id_ktgori_pengadaan') : "Swakelola"); ?>" class="custom-control-input" 
+						   <?php 
+						 	if($_paket['id_ktgori_pengadaan']=="Swakelola"){
+								echo "checked";
+							}  
+						   ?> 
+						   id="id_ktgori_pengadaan2"/>
                            <span class="custom-control-indicator"></span>
                            <span class="custom-control-description">Swakelola</span>
                            </label>
@@ -236,7 +290,7 @@
                               <h5>Tanggal Pembuatan</h5>
                               <div class="input-group">
                                  <div class="input-group-addon"><i class="ti-calendar"></i></div>
-                                 <input type="text" class="form-control datepicker" id="tanggal9" name="createtime" value="<?php echo ($this->input->post('createtime') ? $this->input->post('createtime') : date("d/m/Y")); ?>" class="form-control" readonly/>
+                                 <input type="text" class="form-control datepicker" id="tanggal9" name="createtime" value="<?php echo ($this->input->post('createtime') ? $this->input->post('createtime') : date("d/m/Y", strtotime($_paket['createtime']))); ?>" class="form-control" readonly/>
                               </div>
                            </div>
                         </div>
@@ -245,7 +299,7 @@
                               <h5>Tanggal Kebutuhan</h5>
                               <div class="input-group">
                                  <div class="input-group-addon"><i class="ti-calendar"></i></div>
-                                 <input type="text" class="form-control datepicker" name="tgl_kebutuhan" value="<?php echo ($this->input->post('tgl_kebutuhan') ? $this->input->post('tgl_kebutuhan') : date("d/m/Y")); ?>" class="form-control" id="tanggal" />
+                                 <input type="text" class="form-control datepicker" name="tgl_kebutuhan" value="<?php echo ($this->input->post('tgl_kebutuhan') ? $this->input->post('tgl_kebutuhan') : date("d/m/Y", strtotime($_paket['tgl_kebutuhan']))); ?>" class="form-control" id="tanggal" />
                               </div>
                            </div>
                         </div>
@@ -256,7 +310,7 @@
                               <h5>Tanggal Awal Pengerjaan</h5>
                               <div class="input-group">
                                  <div class="input-group-addon"><i class="ti-calendar"></i></div>
-                                 <input type="text" class="form-control datepicker" name="tgl_awal_pkerjaan" value="<?php echo ($this->input->post('tgl_awal_pkerjaan') ? $this->input->post('tgl_awal_pkerjaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal2" />
+                                 <input type="text" class="form-control datepicker" name="tgl_awal_pkerjaan" value="<?php echo ($this->input->post('tgl_awal_pkerjaan') ? $this->input->post('tgl_awal_pkerjaan') : date("d/m/Y", strtotime($_paket['tgl_awal_pkerjaan']))); ?>" class="form-control" id="tanggal2" />
                               </div>
                            </div>
                         </div>
@@ -268,7 +322,7 @@
                               <h5>Tanggal Akhir Pengerjaan</h5>
                               <div class="input-group">
                                  <div class="input-group-addon"><i class="ti-calendar"></i></div>
-                                 <input type="text" class="form-control datepicker" name="tgl_akhir_pkerjaan" value="<?php echo ($this->input->post('tgl_akhir_pkerjaan') ? $this->input->post('tgl_akhir_pkerjaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal3" />
+                                 <input type="text" class="form-control datepicker" name="tgl_akhir_pkerjaan" value="<?php echo ($this->input->post('tgl_akhir_pkerjaan') ? $this->input->post('tgl_akhir_pkerjaan') : date("d/m/Y", strtotime($_paket['tgl_akhir_pkerjaan']))); ?>" class="form-control" id="tanggal3" />
                               </div>
                            </div>
                         </div>
@@ -283,7 +337,7 @@
 					 	<p>Tanggal Awal</p>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-calendar"></i></div>
-                              <input type="text" class="form-control datepicker" name="tgl_awal_pengadaan" value="<?php echo ($this->input->post('tgl_awal_pengadaan') ? $this->input->post('tgl_awal_pengadaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal4" />
+                              <input type="text" class="form-control datepicker" name="tgl_awal_pengadaan" value="<?php echo ($this->input->post('tgl_awal_pengadaan') ? $this->input->post('tgl_awal_pengadaan') : date("d/m/Y", strtotime($_paket['tgl_awal_pengadaan']))); ?>" class="form-control" id="tanggal4" />
                            </div>
                         </div>
                      </div>
@@ -295,7 +349,7 @@
                         <p>Tanggal Akhir</p>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-calendar"></i></div>
-                              <input type="text" class="form-control datepicker" name="tgl_akhir_pengadaan" value="<?php echo ($this->input->post('tgl_akhir_pengadaan') ? $this->input->post('tgl_akhir_pengadaan') : date("d/m/Y")); ?>" class="form-control" id="tanggal5" />
+                              <input type="text" class="form-control datepicker" name="tgl_akhir_pengadaan" value="<?php echo ($this->input->post('tgl_akhir_pengadaan') ? $this->input->post('tgl_akhir_pengadaan') : date("d/m/Y", strtotime($_paket['tgl_akhir_pengadaan']))); ?>" class="form-control" id="tanggal5" />
                            </div>
                         </div>
                      </div>
@@ -306,7 +360,7 @@
                               <p>Uraian</p>
                                  <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-comment-alt"></i></div>
-                                    <textarea name="uraian" style="height:200px" class="form-control"><?php echo $this->input->post('uraian'); ?></textarea>
+                                    <textarea name="uraian" style="height:200px" class="form-control"><?php echo ($this->input->post('uraian') ? $this->input->post('uraian') : $_paket['uraian']); ?></textarea>
                                     <!-- <input type="text" name="uraian" value="<?php //echo $this->input->post('uraian'); ?>" class="form-control" id="uraian" /> -->
                                  </div>
                            </div>
@@ -516,33 +570,6 @@
                               </div>
                               <?php echo form_close(); ?>
                            </div>
-                           <br/>
-                           <!-- <h3>Detail Lokasi</h3>
-                           <div class="table-responsive m-t-40">
-                           <table class="table table-striped table-bordered">
-                              <tr>
-                                 <th>ID</th>
-                                 <th>Id Paket</th>
-                                 <th>Id Kec Kel</th>
-                                 <th>Keterangan</th>
-                                 <th>CreatedDate</th>
-                                 <th>Actions</th>
-                              </tr>
-                              <?php //foreach($tr_lokasi_paket as $t){ ?>
-                              <tr>
-                                 <td><?php //echo $t['id']; ?></td>
-                                 <td><?php //echo $t['id_paket']; ?></td>
-                                 <td><?php //echo $t['id_kec_kel']; ?></td>
-                                 <td><?php //echo $t['keterangan']; ?></td>
-                                 <td><?php //echo $t['createdDate']; ?></td>
-                                 <td>
-                                       <a href="<?php //e//cho site_url('tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs">Edit</a> 
-                                       <a href="<?php //echo site_url('tr_lokasi_paket/remove/'.$t['id']); ?>" class="btn btn-danger btn-xs">Delete</a>
-                                 </td>
-                              </tr>
-                              <?php //} ?>
-                           </table>
-                           </div> -->
                         </div>
                      </div>
                   </div>
