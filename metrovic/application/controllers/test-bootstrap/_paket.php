@@ -129,8 +129,13 @@ class _paket extends CI_Controller{
 				$data['all_progress'] = $this->Progres_model->get_all_progress();
 
                 $data['_view'] = '_paket/edit';
-                $this->load->view('layouts/main',$data);
+                 $this->load->view('template/header');
+                $this->load->view('template/sidebar');
+                $this->load->view('_paket/edit',$data);
+                $this->load->view('template/footer');
+               
             }
+                
         }
         else
             show_error('The _paket you are trying to edit does not exist.');
