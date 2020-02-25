@@ -77,89 +77,89 @@
                 
 
                     <div class="table-responsive m-t-40">
-					<table id="example23" id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                    <table id="example23" id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Id Paket</th>
-									<th>Id Keterangan</th>
-									<th>Id Penyedia</th>
-									<th>Id Progress</th>
-									<th>Id Ktgori Pengadaan</th>
-									<th>Sumberdana</th>
-									<th>Volume</th>
-									<th>Tgl Kebutuhan</th>
-									<th>Tgl Awal Pkerjaan</th>
-									<th>Tgl Akhir Pkerjaan</th>
-									<th>Tgl Awal Pengadaan</th>
-									<th>Tgl Akhir Pengadaan</th>
-									<th>Jenis</th>
-									<th>Metode</th>
-									<th>Uraian</th>
-									<th>Tahun Anggaran</th>
-									<th>Createtime</th>
-									<th>Nama Paket</th>
-									<th>Rincian Paket</th>
-									<th>Detail Paket</th>
-									<th>Uang Paket</th>
-									<th style="width:12%">Opsi </th>
+                                    <th>Id Keterangan</th>
+                                    <th>Id Penyedia</th>
+                                    <th>Id Progress</th>
+                                    <th>Id Ktgori Pengadaan</th>
+                                    <th>Sumberdana</th>
+                                    <th>Volume</th>
+                                    <th>Tgl Kebutuhan</th>
+                                    <th>Tgl Awal Pkerjaan</th>
+                                    <th>Tgl Akhir Pkerjaan</th>
+                                    <th>Tgl Awal Pengadaan</th>
+                                    <th>Tgl Akhir Pengadaan</th>
+                                    <th>Jenis</th>
+                                    <th>Metode</th>
+                                    <th>Uraian</th>
+                                    <th>Tahun Anggaran</th>
+                                    <th>Createtime</th>
+                                    <th>Nama Paket</th>
+                                    <th>Rincian Paket</th>
+                                    <th>Detail Paket</th>
+                                    <th>Uang Paket</th>
+                                    <th style="width:12%">Opsi </th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-									<th>Id Paket</th>
-									<th>Id Keterangan</th>
-									<th>Id Penyedia</th>
-									<th>Id Progress</th>
-									<th>Id Ktgori Pengadaan</th>
-									<th>Sumberdana</th>
-									<th>Volume</th>
-									<th>Tgl Kebutuhan</th>
-									<th>Tgl Awal Pkerjaan</th>
-									<th>Tgl Akhir Pkerjaan</th>
-									<th>Tgl Awal Pengadaan</th>
-									<th>Tgl Akhir Pengadaan</th>
-									<th>Jenis</th>
-									<th>Metode</th>
-									<th>Uraian</th>
-									<th>Tahun Anggaran</th>
-									<th>Createtime</th>
-									<th>Nama Paket</th>
-									<th>Rincian Paket</th>
-									<th>Detail Paket</th>
-									<th>Uang Paket</th>
-									<th style="width:12%">Opsi </th>
+                                    <th>Id Paket</th>
+                                    <th>Id Keterangan</th>
+                                    <th>Id Penyedia</th>
+                                    <th>Id Progress</th>
+                                    <th>Id Ktgori Pengadaan</th>
+                                    <th>Sumberdana</th>
+                                    <th>Volume</th>
+                                    <th>Tgl Kebutuhan</th>
+                                    <th>Tgl Awal Pkerjaan</th>
+                                    <th>Tgl Akhir Pkerjaan</th>
+                                    <th>Tgl Awal Pengadaan</th>
+                                    <th>Tgl Akhir Pengadaan</th>
+                                    <th>Jenis</th>
+                                    <th>Metode</th>
+                                    <th>Uraian</th>
+                                    <th>Tahun Anggaran</th>
+                                    <th>Createtime</th>
+                                    <th>Nama Paket</th>
+                                    <th>Rincian Paket</th>
+                                    <th>Detail Paket</th>
+                                    <th>Uang Paket</th>
+                                    <th style="width:12%">Opsi </th>
                                 </tr>
                             </tfoot>
-							<tbody>
-					<?php foreach($_paket as $u){ ?>
+                            <tbody>
+                    <?php foreach($_paket as $u){ ?>
     <tr>
-		<td><?php echo $u['id_paket']; ?></td>
-		<td><?php echo $u['id_keterangan']; ?></td>
-		<td><?php echo $u['id_penyedia']; ?></td>
-		<td><?php echo $u['id_progress']; ?></td>
-		<td><?php echo $u['id_ktgori_pengadaan']; ?></td>
-		<td><?php echo $u['sumberdana']; ?></td>
-		<td><?php echo $u['volume']; ?></td>
-		<td><?php echo $u['tgl_kebutuhan']; ?></td>
-		<td><?php echo $u['tgl_awal_pkerjaan']; ?></td>
-		<td><?php echo $u['tgl_akhir_pkerjaan']; ?></td>
-		<td><?php echo $u['tgl_awal_pengadaan']; ?></td>
-		<td><?php echo $u['tgl_akhir_pengadaan']; ?></td>
-		<td><?php echo $u['jenis']; ?></td>
-		<td><?php echo $u['metode']; ?></td>
-		<td><?php echo $u['uraian']; ?></td>
-		<td><?php echo $u['tahun_anggaran']; ?></td>
-		<td><?php echo $u['createtime']; ?></td>
-		<td><?php echo $u['nama_paket']; ?></td>
-		<td><?php echo $u['rincian_paket']; ?></td>
-		<td><?php echo $u['detail_paket']; ?></td>
-		<td><?php echo $u['uang_paket']; ?></td>
-		<td>
+        <td><?php echo $u['id_paket']; ?></td>
+        <td><?php echo $u['id_keterangan']; ?></td>
+        <td><?php echo $u['id_penyedia']; ?></td>
+        <td><?php echo $u['id_progress']; ?></td>
+        <td><?php echo $u['id_ktgori_pengadaan']; ?></td>
+        <td><?php echo $u['sumberdana']; ?></td>
+        <td><?php echo $u['volume']; ?></td>
+        <td><?php echo $u['tgl_kebutuhan']; ?></td>
+        <td><?php echo $u['tgl_awal_pkerjaan']; ?></td>
+        <td><?php echo $u['tgl_akhir_pkerjaan']; ?></td>
+        <td><?php echo $u['tgl_awal_pengadaan']; ?></td>
+        <td><?php echo $u['tgl_akhir_pengadaan']; ?></td>
+        <td><?php echo $u['jenis']; ?></td>
+        <td><?php echo $u['metode']; ?></td>
+        <td><?php echo $u['uraian']; ?></td>
+        <td><?php echo $u['tahun_anggaran']; ?></td>
+        <td><?php echo $u['createtime']; ?></td>
+        <td><?php echo $u['nama_paket']; ?></td>
+        <td><?php echo $u['rincian_paket']; ?></td>
+        <td><?php echo $u['detail_paket']; ?></td>
+        <td><?php echo $u['uang_paket']; ?></td>
+        <td>
             <a href="<?php echo site_url('test-bootstrap/_paket/edit/'.$u['id_paket']); ?>" class="btn btn-info btn-xs">Edit</a> 
         </td>
     </tr>
-	<?php } ?>
-							</tbody>
+    <?php } ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -171,3 +171,5 @@
     <!-- End Page Content -->
 
 </div>
+
+
