@@ -104,6 +104,23 @@
                            <input type="text" name="nama_paket" value="<?php echo $this->input->post('nama_paket'); ?>" class="form-control" id="nama_paket" />
                         </div>
                      </div>
+                     <div class="form-group">
+                        <h5>Kegiatan</h5>
+                        <div>
+                           <div class="input-group">
+                              <div class="input-group-addon"><i class="ti-archive"></i></div>
+                              <select class="select2 col-md-12" name="kegiatan">
+                                 <?php
+                                    foreach($all__kegiatan as $_kegiatan){
+                                       echo '<option value="'.$_kegiatan['id_kegiatan'].'">'.$_kegiatan['kegiatan'].'</option>';
+                                    }
+                                 ?>
+                                 <option value="0">Tidak ada</option>
+                              </select>
+                              <!-- <input type="text" name="jenis" value="<?php //echo $this->input->post('jenis'); ?>" class="form-control" id="jenis" /> -->
+                           </div>
+                        </div>
+                     </div>
 					 <div class="row">
 					 <div class="form-group col-md-7">
                         <h5>Jenis</h5>
@@ -233,7 +250,7 @@
                      <div class="row">
                         <div class="col-md-5">
                            <div class="form-group">
-                              <h5>Tanggal Pembuatan</h5>
+                              <h5>Tanggal Pembuatan Paket</h5>
                               <div class="input-group">
                                  <div class="input-group-addon"><i class="ti-calendar"></i></div>
                                  <input type="text" class="form-control datepicker" id="tanggal9" name="createtime" value="<?php echo ($this->input->post('createtime') ? $this->input->post('createtime') : date("d/m/Y")); ?>" class="form-control" readonly/>

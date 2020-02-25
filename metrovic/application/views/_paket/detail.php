@@ -45,7 +45,7 @@
             <?php endif; ?>
             <?php endif; ?>
             <div class="table-responsive m-t-40">
-                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                    <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <?php foreach($_paket as $u){ ?>
                                 <tr>

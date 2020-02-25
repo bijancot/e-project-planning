@@ -365,11 +365,11 @@
     });
 
     $( document ).ready(function() {
-    $("#jenis1").select2();
-    $("select").attr("disabled", true);
+    // $("#jenis1").select2();
+    $('.tydac').attr("disabled", true);
     //$("input").attr("disabled", true);
-    $('input[type=text]').attr("disabled", true);
-    $('textarea').attr("disabled", true);
+    $('.maininput').attr("disabled", true);
+    $("#textarea").attr("disabled", true);
     });
     </script>
     <!-- End form js -->

@@ -46,7 +46,8 @@ class _paket extends CI_Controller{
 				'tgl_akhir_pkerjaan' => $this->input->post('tgl_akhir_pkerjaan'),
 				'tgl_awal_pengadaan' => $this->input->post('tgl_awal_pengadaan'),
 				'tgl_akhir_pengadaan' => $this->input->post('tgl_akhir_pengadaan'),
-				'jenis' => $this->input->post('jenis'),
+                'jenis' => $this->input->post('jenis'),
+                'id_kegiatan' => $this->input->post('kegiatan'),
 				'metode' => $this->input->post('metode'),
 				'uraian' => $this->input->post('uraian'),
 				'tahun_anggaran' => $this->input->post('tahun_anggaran'),
@@ -70,6 +71,9 @@ class _paket extends CI_Controller{
 			$this->load->model('penyedium_model');
 			$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
 
+            $this->load->model('_kegiatan_model');
+            $data['all__kegiatan'] = $this->_kegiatan_model->get_all__kegiatan();
+            
 			// $this->load->model('Progres_model');
 			// $data['all_progress'] = $this->Progres_model->get_all_progress();
             
@@ -105,7 +109,8 @@ class _paket extends CI_Controller{
 					'tgl_akhir_pkerjaan' => $this->input->post('tgl_akhir_pkerjaan'),
 					'tgl_awal_pengadaan' => $this->input->post('tgl_awal_pengadaan'),
 					'tgl_akhir_pengadaan' => $this->input->post('tgl_akhir_pengadaan'),
-					'jenis' => $this->input->post('jenis'),
+                    'jenis' => $this->input->post('jenis'),
+                    'id_kegiatan' => $this->input->post('kegiatan'),
 					'metode' => $this->input->post('metode'),
 					'uraian' => $this->input->post('uraian'),
 					'tahun_anggaran' => $this->input->post('tahun_anggaran'),
@@ -130,6 +135,9 @@ class _paket extends CI_Controller{
 				$this->load->model('Progres_model');
 				$data['all_progress'] = $this->Progres_model->get_all_progress();
 
+                $this->load->model('_kegiatan_model');
+                $data['all__kegiatan'] = $this->_kegiatan_model->get_all__kegiatan();
+                
                 $data['_view'] = '_paket/edit';
                  $this->load->view('template/header');
                 $this->load->view('template/sidebar');
@@ -164,22 +172,27 @@ class _paket extends CI_Controller{
         // check if the _paket exists before trying to edit it
         $data['_paket'] = $this->_paket_model->get__paket($id_paket);
         
-        
-				$this->load->model('_keterangan_model');
-				$data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
+                $this->load->model('_keterangan_model');
+                $data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
 
-				$this->load->model('penyedium_model');
-				$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
+                $this->load->model('penyedium_model');
+                $data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
 
-				$this->load->model('Progres_model');
-				$data['all_progress'] = $this->Progres_model->get_all_progress();
+                $this->load->model('Progres_model');
+                $data['all_progress'] = $this->Progres_model->get_all_progress();
 
-                $data['_view'] = '_paket/edit';
+                $this->load->model('_kegiatan_model');
+                $data['all__kegiatan'] = $this->_kegiatan_model->get_all__kegiatan();
+
+                $this->load->model('Kec_kel_model');
+                $data['all_kec_kel'] = $this->Kec_kel_model->get_all_kec_kel();
+                
+                $this->load->model('Tr_lokasi_paket_model');
+                $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->get_tr_lokasi_paket($id_paket);
 
                 $this->load->view('template/header');
                 $this->load->view('template/sidebar');
                 $this->load->view('_paket/detail',$data);
-               
                 $this->load->view('template/addjs');
                
     }

@@ -16,7 +16,7 @@ class Tr_lokasi_paket_model extends CI_Model
      */
     function get_tr_lokasi_paket($id)
     {
-        return $this->db->get_where('tr_lokasi_paket',array('id'=>$id))->row_array();
+        return $this->db->get_where('tr_lokasi_paket',array('id'=>$id))->result_array();
     }
         
     /*
