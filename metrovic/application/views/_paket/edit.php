@@ -103,13 +103,30 @@
                            <input type="text" name="nama_paket" value="<?php echo ($this->input->post('nama_paket') ? $this->input->post('nama_paket') : $_paket['nama_paket']); ?>" class="form-control" id="nama_paket" />
                         </div>
                      </div>
+                     <div class="form-group">
+                        <h5>Kegiatan</h5>
+                        <div>
+                           <div class="input-group">
+                              <div class="input-group-addon"><i class="ti-archive"></i></div>
+                              <select class="select2 col-md-12 tydac" name="kegiatan">
+                                 <?php
+                                    foreach($all__kegiatan as $_kegiatan){
+                                       echo '<option value="'.$_kegiatan['id_kegiatan'].'">'.$_kegiatan['kegiatan'].'</option>';
+                                    }
+                                 ?>
+                                 <option value="0">Tidak ada</option>
+                              </select>
+                              <!-- <input type="text" name="jenis" value="<?php //echo $this->input->post('jenis'); ?>" class="form-control" id="jenis" /> -->
+                           </div>
+                        </div>
+                     </div>
 					 <div class="row">
 					 <div class="form-group col-md-7">
                         <h5>Jenis</h5>
                         <div>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-archive"></i></div>
-                              <select class="select2" name="jenis">
+                              <select class="select2 tydac" name="jenis">
 								  <?php
 								 	$option = array(
 										'BARANG'=>'BARANG',
@@ -149,7 +166,7 @@
 							<h5>Sumber Dana</h5>
 							<div class="input-group">
 							<div class="input-group-addon"><i class="ti-money"></i></div>
-							<select id="sumberdana" name="sumberdana" class="select2 col-md-12">
+							<select id="sumberdana" name="sumberdana" class="select2 col-md-12 tydac">
 							<option value=" ">Sumber Dana</option>
 							<?php
 							
@@ -195,7 +212,7 @@
                            <h5>Metode</h5>
                            <div class="input-group">
                               <div class="input-group-addon"><i class="ti-pencil"></i></div>
-							  <select name="metode" class="select2">
+							  <select name="metode" class="select2 tydac">
 							  <?php
 							
 									$options = array(
@@ -239,7 +256,7 @@
                         <h5>Tahun Anggaran</h5>
                         <div class="col-md-12">
                            <label class="custom-control custom-radio">
-						   <input type="radio" name="tahun_anggaran" value="<?php echo ($this->input->post('tahun_anggaran') ? $this->input->post('tahun_anggaran') : $_paket['tahun_anggaran']); ?>" <?php
+						   <input type="radio" name="tahun_anggaran" value="<?php echo date("Y")?>" <?php
 						 	if($_paket['tahun_anggaran']==date("Y")){
 								echo "checked";
 							}  ?> class="custom-control-input" id="tahun_anggaran"/>
@@ -287,7 +304,7 @@
                      <div class="row">
                         <div class="col-md-5">
                            <div class="form-group">
-                              <h5>Tanggal Pembuatan</h5>
+                              <h5>Tanggal Pembuatan Paket</h5>
                               <div class="input-group">
                                  <div class="input-group-addon"><i class="ti-calendar"></i></div>
                                  <input type="text" class="form-control datepicker" id="tanggal9" name="createtime" value="<?php echo ($this->input->post('createtime') ? $this->input->post('createtime') : date("d/m/Y", strtotime($_paket['createtime']))); ?>" class="form-control" readonly/>
