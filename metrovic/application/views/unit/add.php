@@ -64,7 +64,7 @@
                 
 
                     <div class="table-responsive m-t-40">
-					<?php echo form_open('unit/add',array("class"=>"form-horizontal")); ?>
+					<?php echo form_open('test-bootstrap/unit/add',array("class"=>"form-horizontal")); ?>
 
 <div class="form-group">
 	<label for="kode_bidang" class="col-md-4 control-label">Bidang</label>

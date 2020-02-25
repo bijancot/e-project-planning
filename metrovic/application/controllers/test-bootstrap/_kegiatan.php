@@ -77,7 +77,7 @@ class _kegiatan extends CI_Controller{
                 );
 
                 $this->_kegiatan_model->update__kegiatan($id_kegiatan,$params);            
-                redirect('_kegiatan/index');
+                redirect('test-bootstrap/_kegiatan/index');
             }
             else
             {

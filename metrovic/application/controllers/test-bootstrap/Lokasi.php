@@ -19,7 +19,10 @@ class Lokasi extends CI_Controller{
         $data['lokasi'] = $this->Lokasi_model->get_all_lokasi();
         
         $data['_view'] = 'lokasi/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('lokasi/index',$data);
+        $this->load->view('template/footer');
     }
 
     /*

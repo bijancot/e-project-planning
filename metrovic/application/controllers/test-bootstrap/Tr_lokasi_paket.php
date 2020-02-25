@@ -19,7 +19,11 @@ class Tr_lokasi_paket extends CI_Controller{
         $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->get_all_tr_lokasi_paket();
         
         $data['_view'] = 'tr_lokasi_paket/index';
-        $this->load->view('layouts/main',$data);
+        //$this->load->view('layouts/main',$data);
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('tr_lokasi_paket/index',$data);
+        $this->load->view('template/footer');
     }
 
     /*
@@ -37,7 +41,7 @@ class Tr_lokasi_paket extends CI_Controller{
             );
             
             $tr_lokasi_paket_id = $this->Tr_lokasi_paket_model->add_tr_lokasi_paket($params);
-            redirect('tr_lokasi_paket/index');
+            redirect('test-bootstrap/tr_lokasi_paket/index');
         }
         else
         {
@@ -48,7 +52,12 @@ class Tr_lokasi_paket extends CI_Controller{
 			$data['all_kec_kel'] = $this->Kec_kel_model->get_all_kec_kel();
             
             $data['_view'] = 'tr_lokasi_paket/add';
-            $this->load->view('layouts/main',$data);
+            //$this->load->view('layouts/main',$data);
+            $this->load->view('template/header');
+            $this->load->view('template/sidebar');
+            $this->load->view('tr_lokasi_paket/add',$data);
+            $this->load->view('template/footer');
+
         }
     }  
 
@@ -72,7 +81,7 @@ class Tr_lokasi_paket extends CI_Controller{
                 );
 
                 $this->Tr_lokasi_paket_model->update_tr_lokasi_paket($id,$params);            
-                redirect('tr_lokasi_paket/index');
+                redirect('test-bootstrap/tr_lokasi_paket/index');
             }
             else
             {
@@ -83,7 +92,11 @@ class Tr_lokasi_paket extends CI_Controller{
 				$data['all_kec_kel'] = $this->Kec_kel_model->get_all_kec_kel();
 
                 $data['_view'] = 'tr_lokasi_paket/edit';
-                $this->load->view('layouts/main',$data);
+                //$this->load->view('layouts/main',$data);
+                $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('tr_lokasi_paket/edit',$data);
+        $this->load->view('template/footer');
             }
         }
         else

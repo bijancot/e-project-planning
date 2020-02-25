@@ -78,7 +78,7 @@ class _jenis_penyedium extends CI_Controller{
                 );
 
                 $this->_jenis_penyedium_model->update__jenis_penyedium($id_jenis_penyedia,$params);            
-                redirect('_jenis_penyedium/index');
+                redirect('test-bootstrap/_jenis_penyedium/index');
             }
             else
             {

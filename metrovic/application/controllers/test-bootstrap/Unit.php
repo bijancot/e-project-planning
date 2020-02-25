@@ -42,7 +42,7 @@ class Unit extends CI_Controller{
             );
             
             $unit_id = $this->Unit_model->add_unit($params);
-            redirect('unit/index');
+            redirect('test-bootstrap/unit/index');
         }
         else
         {
@@ -77,7 +77,7 @@ class Unit extends CI_Controller{
                 );
 
                 $this->Unit_model->update_unit($id_unit,$params);            
-                redirect('unit/index');
+                redirect('test-bootstrap/unit/index');
             }
             else
             {

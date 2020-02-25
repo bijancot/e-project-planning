@@ -1,4 +1,4 @@
-<?php echo form_open('_jenis_penyedium/edit/'.$_jenis_penyedium['id_jenis_penyedia'],array("class"=>"form-horizontal")); ?>
+<?php echo form_open('test-bootstrap/_jenis_penyedium/edit/'.$_jenis_penyedium['id_jenis_penyedia'],array("class"=>"form-horizontal")); ?>
 
 	<div class="form-group">
 		<label for="id_penyedia" class="col-md-4 control-label"> Penyedium</label>

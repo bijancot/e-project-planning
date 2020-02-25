@@ -66,7 +66,7 @@
                 
 
                     <div class="table-responsive m-t-40">
-					<?php echo form_open('urusan/edit/'.$urusan['id_urusan'],array("class"=>"form-horizontal")); ?>
+					<?php echo form_open('test-bootstrap/urusan/edit/'.$urusan['id_urusan'],array("class"=>"form-horizontal")); ?>
 
 	<div class="form-group">
 		<label for="nama_urusan" class="col-md-4 control-label">Nama Urusan</label>

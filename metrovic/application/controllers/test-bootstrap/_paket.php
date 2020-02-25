@@ -186,9 +186,11 @@ class _paket extends CI_Controller{
 				$data['all__kegiatan'] = $this->_kegiatan_model->get_all__kegiatan();
 
                 $data['_view'] = '_paket/edit';
-                 $this->load->view('template/header');
+
+                $this->load->view('template/header');
                 $this->load->view('template/sidebar');
                 $this->load->view('_paket/detail',$data);
+               
                 $this->load->view('template/addjs');
                
     }
