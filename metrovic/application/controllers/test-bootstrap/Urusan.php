@@ -71,7 +71,7 @@ class Urusan extends CI_Controller{
                 );
 
                 $this->Urusan_model->update_urusan($id_urusan,$params);            
-                redirect('urusan/index');
+                redirect('test-bootstrap/urusan/index');
             }
             else
             {

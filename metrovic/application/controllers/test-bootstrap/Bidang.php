@@ -38,7 +38,7 @@ class Bidang extends CI_Controller{
             );
             
             $bidang_id = $this->Bidang_model->add_bidang($params);
-            redirect('bidang/index');
+            redirect('test-bootstrap/bidang/index');
         }
         else
         {

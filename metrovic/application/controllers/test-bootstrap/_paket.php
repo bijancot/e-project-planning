@@ -58,7 +58,7 @@ class _paket extends CI_Controller{
             );
             
             $_paket_id = $this->_paket_model->add__paket($params);
-            redirect('_paket/index');
+            redirect('test-bootstrap/_paket/index');
         }
         else
         {

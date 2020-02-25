@@ -45,7 +45,7 @@ class _keterangan extends CI_Controller{
             );
             
             $_keterangan_id = $this->_keterangan_model->add__keterangan($params);
-            redirect('_keterangan/index');
+            redirect('test-bootstrap/_keterangan/index');
         }
         else
         {
@@ -80,7 +80,7 @@ class _keterangan extends CI_Controller{
                 );
 
                 $this->_keterangan_model->update__keterangan($id_keterangan,$params);            
-                redirect('_keterangan/index');
+                redirect('test-bootstrap/_keterangan/index');
             }
             else
             {
