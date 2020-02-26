@@ -49,6 +49,12 @@
                                 <thead>
                                 <?php foreach($_paket as $u){ ?>
                                 <tr>
+                                 <td colspan="2" align="center">
+                                 <?php echo "<strong>Detail Paket</strong>"; ?>
+                                 &nbsp;
+                                 </td>
+                               </tr>
+                                <tr>
                                     <tr>
                                     <td>Id Paket</td>
                                     <td><?php echo $u['id_paket']; ?></td>
