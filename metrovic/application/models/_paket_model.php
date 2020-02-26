@@ -16,9 +16,14 @@ class _paket_model extends CI_Model
      */
     function get__paket($id_paket)
     {
-        return $this->db->get_where('_paket',array('id_paket'=>$id_paket))->result_array();
+        return $this->db->get_where('_paket',array('id_paket'=>$id_paket))->row_array();
     }
         
+    function get__paketyolo($id_paket)
+    {
+        return $this->db->get_where('_paket',array('id_paket'=>$id_paket))->result_array();
+    }
+
     /*
      * Get all _paket
      */
@@ -26,6 +31,13 @@ class _paket_model extends CI_Model
 )    {
         $this->db->order_by('id_paket', 'desc');
         return $this->db->get('_paket')->result_array();
+    }
+
+    function get_id_paket_l(){
+        $this->db->select('id_paket');
+        $this->db->order_by('createdDate', 'desc');
+        $this->db->limit(1);
+        return $this->db->get('_paket')->row_array();
     }
         
     /*
