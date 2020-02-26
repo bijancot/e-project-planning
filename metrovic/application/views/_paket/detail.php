@@ -107,61 +107,38 @@
                                 <?php } ?>
                             </thead>
                         </table>
-                    </div>
-                              <?php echo form_open('test-bootstrap/_paket',array("class"=>"form-horizontal")); ?>
-
-   <div class="form-group">
-      <label for="id_paket" class="col-md-4 control-label"> Paket</label>
-      <div class="col-md-8">
-         <select name="id_paket" class="form-control">
-            <option value="">select _paket</option>
-            <?php 
-            foreach($all__paket as $_paket)
-            {
-               $selected = ($_paket['id_paket'] == $this->input->post('id_paket')) ? ' selected="selected"' : "";
-
-               echo '<option value="'.$_paket['id_paket'].'" '.$selected.'>'.$_paket['id_paket'].'</option>';
-            } 
-            ?>
-         </select>
-      </div>
-   </div>
-   <div class="form-group">
-      <label for="id_kec_kel" class="col-md-4 control-label">Kec Kel</label>
-      <div class="col-md-8">
-         <select name="id_kec_kel" class="form-control">
-            <option value="">select kec_kel</option>
-            <?php 
-            foreach($all_kec_kel as $kec_kel)
-            {
-               $selected = ($kec_kel['id_kelurahan'] == $this->input->post('id_kec_kel')) ? ' selected="selected"' : "";
-
-               echo '<option value="'.$kec_kel['id_kelurahan'].'" '.$selected.'>'.$kec_kel['id_kelurahan'].'</option>';
-            } 
-            ?>
-         </select>
-      </div>
-   </div>
-   <div class="form-group">
-      <label for="keterangan" class="col-md-4 control-label">Keterangan</label>
-      <div class="col-md-8">
-         <input type="text" name="keterangan" value="<?php echo $this->input->post('keterangan'); ?>" class="form-control" id="keterangan" />
-      </div>
-   </div>
-   <div class="form-group">
-      <label for="createdDate" class="col-md-4 control-label">CreatedDate</label>
-      <div class="col-md-8">
-         <input type="text" name="createdDate" value="<?php echo $this->input->post('createdDate'); ?>" class="form-control" id="createdDate" />
-      </div>
-   </div>
-   
-   <div class="form-group">
-      <div class="col-sm-offset-4 col-sm-8">
-         <button type="submit" class="btn btn-success">Save</button>
-        </div>
-   </div>
-
-<?php echo form_close(); ?>
+                        </div>
+                        <div class="table-responsive m-t-40">
+                           <h3>Lokasi Paket</h3>
+                              <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                 
+                                          <thead>
+                                             <tr>
+                                       <th>No</th>
+                                       <th>Provinsi</th>
+                                       <th>Kecamatan</th>
+                                       <th>Desa/Kelurahan</th>
+                                       <th>Keterangan</th>
+                                             </tr>
+                                          </thead>
+                                    <tbody>
+                                    <?php
+                                    $a=1;
+                                    foreach ($tr_lokasi_paket as $t){ ?>
+                                    <tr>
+                                       <td><?php echo $a; ?></td>
+                                       <td><?php echo "Jawa Timur"; ?></td>
+                                       <td><?php echo $t['nama_kecamatan']; ?></td>
+                                       <td><?php echo $t['nama_kelurahan']; ?></td>
+                                       <td><?php echo $t['keterangan']; ?></td>
+                                      
+                                    </tr>
+                                    <?php 
+                                       $a=$a+1;
+                                    } ?>
+                                    </tbody>
+                                       </table>
+                                 </div>
                            </div>
                         </div>
                      </div>
