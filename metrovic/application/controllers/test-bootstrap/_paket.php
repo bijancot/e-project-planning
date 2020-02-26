@@ -143,6 +143,9 @@ class _paket extends CI_Controller{
                 $this->load->model('_kegiatan_model');
                 $data['all__kegiatan'] = $this->_kegiatan_model->get_all__kegiatan();
                 
+                $this->load->model('Tr_lokasi_paket_model');
+                $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->getbypaket($id_paket);
+
                 $data['_view'] = '_paket/edit';
                  $this->load->view('template/header');
                 $this->load->view('template/sidebar');
@@ -193,7 +196,8 @@ class _paket extends CI_Controller{
                 $data['all_kec_kel'] = $this->Kec_kel_model->get_all_kec_kel();
                 
                 $this->load->model('Tr_lokasi_paket_model');
-                $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->get_tr_lokasi_paket($id_paket);
+                $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->getbypaket($id_paket);
+                
 
                 $this->load->view('template/header');
                 $this->load->view('template/sidebar');
