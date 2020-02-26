@@ -16,14 +16,14 @@ class _paket_model extends CI_Model
      */
     function get__paket($id_paket)
     {
-        return $this->db->get_where('_paket',array('id_paket'=>$id_paket))->row_array();
+        return $this->db->get_where('_paket',array('id_paket'=>$id_paket))->result_array();
     }
         
     /*
      * Get all _paket
      */
-    function get_all__paket()
-    {
+    function get_all__paket(
+)    {
         $this->db->order_by('id_paket', 'desc');
         return $this->db->get('_paket')->result_array();
     }
