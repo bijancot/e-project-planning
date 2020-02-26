@@ -55,28 +55,16 @@
                                  </td>
                                </tr>
                                 <tr>
-                                    <tr>
-                                    <td>Id Paket</td>
-                                    <td><?php echo $u['id_paket']; ?></td>
+                                  <tr>
+                                    <td>Nama Paket</td>
+                                    <td><?php echo $u['nama_paket']; ?></td>
                                   </tr>
                                   <tr>
-                                    <td>Id Keterangan</td>
-                                    <td><?php echo $u['id_keterangan']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Id Penyedia</td>
-                                    <td><?php echo $u['id_penyedia']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Id Progress</td>
-                                    <td><?php echo $u['id_progress']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Id Ktgori Pengadaan</td>
+                                    <td>Jenis Pengadaan</td>
                                     <td><?php echo $u['id_ktgori_pengadaan']; ?></td>
                                   </tr>
                                   <tr>
-                                    <td>Sumberdana</td>
+                                    <td>Sumber Dana</td>
                                     <td><?php echo $u['sumberdana']; ?></td>
                                   </tr>
                                   <tr>
@@ -84,20 +72,16 @@
                                     <td><?php echo $u['volume']; ?></td>
                                   </tr>
                                   <tr>
-                                    <td>Tgl Kebutuhan</td>
+                                    <td>Tanggal Kebutuhan</td>
                                     <td><?php echo $u['tgl_kebutuhan']; ?></td>
                                   </tr>
                                   <tr>
-                                    <td>Tgl Awal Pkerjaan</td>
-                                    <td><?php echo $u['tgl_awal_pkerjaan']; ?></td>
+                                    <td>Waktu Pengerjaan</td>
+                                    <td><?php echo $u['tgl_awal_pkerjaan'].' s.d '.$u['tgl_akhir_pkerjaan']; ?></td>
                                   </tr>
                                   <tr>
-                                    <td>Tgl Awal Pengadaan</td>
-                                    <td><?php echo $u['tgl_akhir_pkerjaan']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Tgl Akhir Pengadaan</td>
-                                    <td><?php echo $u['tgl_akhir_pengadaan']; ?></td>
+                                    <td>Waktu Pengadaan</td>
+                                    <td><?php echo $u['tgl_awal_pengadaan'].' s.d '.$u['tgl_akhir_pengadaan']; ?></td>
                                   </tr>
                                   <tr>
                                     <td>Jenis</td>
@@ -116,24 +100,8 @@
                                     <td><?php echo $u['tahun_anggaran']; ?></td>
                                   </tr>
                                   <tr>
-                                    <td>Createtime</td>
-                                    <td><?php echo $u['createtime']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Nama Paket</td>
-                                    <td><?php echo $u['nama_paket']; ?></td>
-                                  </tr>
-                                  <tr>
                                     <td>Rincian Paket</td>
                                     <td><?php echo $u['rincian_paket']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Detail Paket</td>
-                                    <td><?php echo $u['detail_paket']; ?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Uang Paket</td>
-                                    <td><?php echo $u['uang_paket']; ?></td>
                                   </tr>
                                 </tr>
                                 <?php } ?>
