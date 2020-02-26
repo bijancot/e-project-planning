@@ -16,7 +16,17 @@ class Tr_lokasi_paket_model extends CI_Model
      */
     function get_tr_lokasi_paket($id)
     {
-        return $this->db->get_where('tr_lokasi_paket',array('id'=>$id))->result_array();
+        return $this->db->get_where('tr_lokasi_paket',array('id'=>$id))->row_array();
+    }
+
+    function getbypaket($id)
+    {
+        $this->db->select('id,nama_kecamatan,nama_kelurahan,keterangan');
+        $this->db->from('kec_kel a');
+        $this->db->join('tr_lokasi_paket b', 'a.id_kelurahan=b.id_kec_kel');
+        $this->db->where('id_paket', $id);
+        return $this->db->get()->result_array();
+        // return $this->db->get_where('tr_lokasi_paket',array('id_paket'=>$id))->result_array();
     }
         
     /*
