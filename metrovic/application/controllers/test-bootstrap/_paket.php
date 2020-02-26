@@ -17,6 +17,7 @@ class _paket extends CI_Controller{
     function index()
     {
         $data['_paket'] = $this->_paket_model->get_all__paket();
+        $data['_paket1'] = $this->_paket_model->get_id_paket_l();
         
         $data['_view'] = '_paket/index';
     
@@ -59,7 +60,8 @@ class _paket extends CI_Controller{
             );
             
             $_paket_id = $this->_paket_model->add__paket($params);
-            redirect('test-bootstrap/_paket/index');
+            $data = $this->_paket_model->get_id_paket_l();
+            redirect('test-bootstrap/_paket/edit/'.$data['id_paket']);
         }
         else
         {
@@ -129,6 +131,9 @@ class _paket extends CI_Controller{
 				$this->load->model('_keterangan_model');
 				$data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
 
+                $this->load->model('Kec_kel_model');
+                $data['all_kec_kel'] = $this->Kec_kel_model->get_all_kec_kel();
+
 				$this->load->model('penyedium_model');
 				$data['all__penyedia'] = $this->penyedium_model->get_all_penyedia();
 
@@ -170,7 +175,7 @@ class _paket extends CI_Controller{
 
     function detail($id_paket){
         // check if the _paket exists before trying to edit it
-        $data['_paket'] = $this->_paket_model->get__paket($id_paket);
+        $data['_paket'] = $this->_paket_model->get__paketyolo($id_paket);
         
                 $this->load->model('_keterangan_model');
                 $data['all__keterangan'] = $this->_keterangan_model->get_all__keterangan();
