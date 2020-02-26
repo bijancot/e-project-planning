@@ -41,7 +41,7 @@ class Tr_lokasi_paket extends CI_Controller{
             );
             
             $tr_lokasi_paket_id = $this->Tr_lokasi_paket_model->add_tr_lokasi_paket($params);
-            redirect('test-bootstrap/tr_lokasi_paket/index');
+            redirect('test-bootstrap/_paket/edit/'.$this->input->post('id_paket'));
         }
         else
         {
