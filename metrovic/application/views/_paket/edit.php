@@ -582,7 +582,7 @@
                                  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                     <div class="modal-content">
                                        <div class="modal-header">
-                                          <h2 class="modal-title" id="exampleModalLongTitle">Modal title</h2>
+                                          <h2 class="modal-title" id="exampleModalLongTitle">Tambah Lokasi Paket</h2>
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                           <span aria-hidden="true">&times;</span>
                                           </button>
@@ -594,7 +594,7 @@
                                           <label for="id_kec_kel" class="col-md-4 control-label">Kec Kel</label>
                                           <div class="col-md-8">
                                              <select name="id_kec_kel" class="form-control" name='id_kec_kel'>
-                                                <option value="">select kec_kel</option>
+                                                <option value="">Pilih Kelurahan & Kecamatan</option>
                                                 <?php 
                                                 foreach($all_kec_kel as $kec_kel)
                                                 {
@@ -609,7 +609,8 @@
                                        <div class="form-group">
                                           <label for="keterangan" class="col-md-4 control-label">Keterangan</label>
                                           <div class="col-md-8">
-                                             <input type="text" name="keterangan" value="<?php echo $this->input->post('keterangan'); ?>" class="form-control" id="keterangan" />
+                                          <textarea name="keterangan" style="height:280px" type="text" class="form-control" id="keteranga"><?php echo $this->input->post('keterangan'); ?></textarea>
+                                             <!-- <input type="text" name="keterangan" value="" class="form-control" id="keterangan" /> -->
                                           </div>
                                        </div>
 
