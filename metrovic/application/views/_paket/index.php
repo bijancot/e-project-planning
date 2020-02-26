@@ -75,22 +75,24 @@
                     <?php endif; ?>
                 <?php endif ?>
                         
-
+                <div class="pull-right">
+						<a href="<?php echo site_url('test-bootstrap/_paket/add'); ?>" class="btn btn-primary"><strong>+ Tambah Paket baru</strong></a> 
+					</div>
                     <div class="table-responsive m-t-40">
-                    <table id="example23" id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                    <table id="example23"  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
                                     <th>Nama Paket</th>
                                     <th>Jenis Pengadaan</th>
                                     <th>Sumberdana</th>
-                                    <th>Volume</th>
+                                    <!-- <th>Volume</th> -->
                                     <th>Tanggal Kebutuhan</th>
                                     <th>Waktu Pekerjaan</th>
                                     <th>Waktu Pengadaan</th>
-                                    <th>Jenis</th>
-                                    <th>Metode</th>
+                                    <!-- <th>Jenis</th>
+                                    <th>Metode</th> -->
                                     <th>Uraian</th>
-                                    <th>Tahun Anggaran</th>
+                                    <!-- <th>Tahun Anggaran</th> -->
                                     <th style="width:12%">Opsi </th>
                                 </tr>
                             </thead>
@@ -99,14 +101,14 @@
                                     <th>Nama Paket</th>
                                     <th>Jenis Pengadaan</th>
                                     <th>Sumberdana</th>
-                                    <th>Volume</th>
+                                    <!-- <th>Volume</th> -->
                                     <th>Tanggal Kebutuhan</th>
                                     <th>Waktu Pekerjaan</th>
                                     <th>Waktu Pengadaan</th>
-                                    <th>Jenis</th>
-                                    <th>Metode</th>
+                                    <!-- <th>Jenis</th> -->
+                                    <!-- <th>Metode</th> -->
                                     <th>Uraian</th>
-                                    <th>Tahun Anggaran</th>
+                                    <!-- <th>Tahun Anggaran</th> -->
                                     <th style="width:12%">Opsi </th>
                                 </tr>
                             </tfoot>
@@ -119,14 +121,14 @@
         <td><?php //echo $u['id_progress']; ?></td> -->
         <td><?php echo $u['id_ktgori_pengadaan']; ?></td>
         <td><?php echo $u['sumberdana']; ?></td>
-        <td><?php echo $u['volume']; ?></td>
+        <!-- <td><?php //echo $u['volume']; ?></td> -->
         <td><?php echo $u['tgl_kebutuhan']; ?></td>
         <td><?php echo $u['tgl_awal_pkerjaan'].' s.d '.$u['tgl_akhir_pkerjaan']; ?></td>
         <td><?php echo $u['tgl_awal_pengadaan'].' s.d '.$u['tgl_akhir_pengadaan']; ?></td>
-        <td><?php echo $u['jenis']; ?></td>
-        <td><?php echo $u['metode']; ?></td>
+        <!-- <td><?php //echo $u['jenis']; ?></td> -->
+        <!-- <td><?php //echo $u['metode']; ?></td> -->
         <td><?php echo $u['uraian']; ?></td>
-        <td><?php echo $u['tahun_anggaran']; ?></td>
+        <!-- <td><?php //echo $u['tahun_anggaran']; ?></td> -->
         <!-- <td><?php //echo $u['createtime']; ?></td> -->
         <!-- <td><?php //echo $u['rincian_paket']; ?></td>
         <td><?php //echo $u['detail_paket']; ?></td>
