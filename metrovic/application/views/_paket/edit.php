@@ -44,6 +44,7 @@
             <a href="<?php echo base_url('admin/user') ?>" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Add New User</a>
             <?php endif; ?>
             <?php endif ?>
+            <h3>Paket</h3>
             <div class="table-responsive m-t-40">
                <?php echo form_open('test-bootstrap/_paket/edit/'.$_paket['id_paket'],array("class"=>"form-horizontal")); ?>
                <div class="row">
@@ -538,10 +539,44 @@
                                  </div>
                               </div>
                               <?php echo form_close(); ?>
-
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                              Launch demo modal
+                           <div class="table-responsive m-t-40">
+                           <h3>Lokasi Paket</h3>
+                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                              Tambah Lokasi
                               </button>
+                              <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                 
+                                          <thead>
+                                             <tr>
+                                       <th>No</th>
+                                       <th>Provinsi</th>
+                                       <th>Kecamatan</th>
+                                       <th>Desa/Kelurahan</th>
+                                       <th>Keterangan</th>
+                                          <th style="width:12%">Opsi </th>
+                                             </tr>
+                                          </thead>
+                                    <tbody>
+                                    <?php
+                                    $a=1;
+                                    foreach ($tr_lokasi_paket as $t){ ?>
+                                    <tr>
+                                       <td><?php echo $a; ?></td>
+                                       <td><?php echo "Jawa Timur"; ?></td>
+                                       <td><?php echo $t['nama_kecamatan']; ?></td>
+                                       <td><?php echo $t['nama_kelurahan']; ?></td>
+                                       <td><?php echo $t['keterangan']; ?></td>
+                                       <td>
+                                             <a href="<?php echo site_url('test-bootstrap/tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs">Edit</a>
+                                       </td>
+                                    </tr>
+                                    <?php 
+                                       $a=$a+1;
+                                    } ?>
+                                    </tbody>
+                                       </table>
+                                 </div>
+                                 <br/>
                               <!-- Modal -->
                               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
