@@ -74,171 +74,64 @@
                         <a href="<?php echo base_url('admin/user') ?>" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Add New User</a>
                     <?php endif; ?>
                 <?php endif ?>
-                
+                        
 
                     <div class="table-responsive m-t-40">
                     <table id="example23" id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                                <tr>
-<<<<<<< HEAD
-                                    <th>Id Paket</th>
-                                    <th>Id Keterangan</th>
-                                    <th>Id Penyedia</th>
-                                    <th>Id Progress</th>
-                                    <th>Id Ktgori Pengadaan</th>
+                            <tr>
+                                    <th>Nama Paket</th>
+                                    <th>Jenis Pengadaan</th>
                                     <th>Sumberdana</th>
                                     <th>Volume</th>
-                                    <th>Tgl Kebutuhan</th>
-                                    <th>Tgl Awal Pkerjaan</th>
-                                    <th>Tgl Akhir Pkerjaan</th>
-                                    <th>Tgl Awal Pengadaan</th>
-                                    <th>Tgl Akhir Pengadaan</th>
+                                    <th>Tanggal Kebutuhan</th>
+                                    <th>Waktu Pekerjaan</th>
+                                    <th>Waktu Pengadaan</th>
                                     <th>Jenis</th>
                                     <th>Metode</th>
                                     <th>Uraian</th>
                                     <th>Tahun Anggaran</th>
-                                    <th>Createtime</th>
-                                    <th>Nama Paket</th>
-                                    <th>Rincian Paket</th>
-                                    <th>Detail Paket</th>
-                                    <th>Uang Paket</th>
                                     <th style="width:12%">Opsi </th>
-=======
-                                    <th>Nama Paket</th>
-                                    <!-- <th>Id Paket</th>
-									<th>Id Keterangan</th>
-									<th>Id Penyedia</th>
-									<th>Id Progress</th> -->
-									<th>Kategori Pengadaan</th>
-									<th>Sumberdana</th>
-									<th>Volume</th>
-									<th>Pemanfaatan Barang/Jasa</th>
-                                    <th>Waktu Pengerjaan</th>
-                                    <th>Waktu Pengadaan</th>
-									<!-- <th>Tgl Awal Pkerjaan</th>
-									<th>Tgl Akhir Pkerjaan</th> -->
-									<!-- <th>Tgl Awal Pengadaan</th>
-									<th>Tgl Akhir Pengadaan</th> -->
-									<th>Jenis</th>
-									<th>Metode</th>
-									<th>Uraian</th>
-									<th>Tahun Anggaran</th>
-									<!-- <th>Createtime</th> -->
-									<!-- <th>Nama Paket</th>
-									<th>Rincian Paket</th>
-									<th>Detail Paket</th>
-									<th>Uang Paket</th> -->
-                                    <th>id_kegiatan</th>
-									<th style="width:12%">Opsi </th>
->>>>>>> 316ecfd19511d5d29ba0f2811477d31318b8cc46
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-<<<<<<< HEAD
-                                    <th>Id Paket</th>
-                                    <th>Id Keterangan</th>
-                                    <th>Id Penyedia</th>
-                                    <th>Id Progress</th>
-                                    <th>Id Ktgori Pengadaan</th>
+                                    <th>Nama Paket</th>
+                                    <th>Jenis Pengadaan</th>
                                     <th>Sumberdana</th>
                                     <th>Volume</th>
-                                    <th>Tgl Kebutuhan</th>
-                                    <th>Tgl Awal Pkerjaan</th>
-                                    <th>Tgl Akhir Pkerjaan</th>
-                                    <th>Tgl Awal Pengadaan</th>
-                                    <th>Tgl Akhir Pengadaan</th>
+                                    <th>Tanggal Kebutuhan</th>
+                                    <th>Waktu Pekerjaan</th>
+                                    <th>Waktu Pengadaan</th>
                                     <th>Jenis</th>
                                     <th>Metode</th>
                                     <th>Uraian</th>
                                     <th>Tahun Anggaran</th>
-                                    <th>Createtime</th>
-                                    <th>Nama Paket</th>
-                                    <th>Rincian Paket</th>
-                                    <th>Detail Paket</th>
-                                    <th>Uang Paket</th>
                                     <th style="width:12%">Opsi </th>
-=======
-                                    <th>Nama Paket</th>
-									<!-- <th>Id Paket</th>
-									<th>Id Keterangan</th>
-									<th>Id Penyedia</th>
-									<th>Id Progress</th> -->
-									<th>Kategori Pengadaan</th>
-									<th>Sumberdana</th>
-									<th>Volume</th>
-									<th>Tgl Kebutuhan</th>
-									<!-- <th>Tgl Awal Pkerjaan</th>
-									<th>Tgl Akhir Pkerjaan</th> -->
-                                    <th>Waktu Pengerjaan</th>
-                                    <th>Waktu Pengadaan</th>
-									<!-- <th>Tgl Awal Pengadaan</th>
-									<th>Tgl Akhir Pengadaan</th> -->
-									<th>Jenis</th>
-									<th>Metode</th>
-									<th>Uraian</th>
-									<th>Tahun Anggaran</th>
-									<!-- <th>Createtime</th> -->
-									<!-- <th>Rincian Paket</th>
-									<th>Detail Paket</th>
-									<th>Uang Paket</th> -->
-                                    <th>id_kegiatan</th>
-									<th style="width:12%">Opsi </th>
->>>>>>> 316ecfd19511d5d29ba0f2811477d31318b8cc46
                                 </tr>
                             </tfoot>
                             <tbody>
                     <?php foreach($_paket as $u){ ?>
     <tr>
-<<<<<<< HEAD
-        <td><?php echo $u['id_paket']; ?></td>
-        <td><?php echo $u['id_keterangan']; ?></td>
-        <td><?php echo $u['id_penyedia']; ?></td>
-        <td><?php echo $u['id_progress']; ?></td>
+        <td><?php echo $u['nama_paket']; ?></td>
+        <!--<td><?php //echo $u['id_keterangan']; ?></td>
+        <td><?php// echo $u['id_penyedia']; ?></td>
+        <td><?php //echo $u['id_progress']; ?></td> -->
         <td><?php echo $u['id_ktgori_pengadaan']; ?></td>
         <td><?php echo $u['sumberdana']; ?></td>
         <td><?php echo $u['volume']; ?></td>
         <td><?php echo $u['tgl_kebutuhan']; ?></td>
-        <td><?php echo $u['tgl_awal_pkerjaan']; ?></td>
-        <td><?php echo $u['tgl_akhir_pkerjaan']; ?></td>
-        <td><?php echo $u['tgl_awal_pengadaan']; ?></td>
-        <td><?php echo $u['tgl_akhir_pengadaan']; ?></td>
+        <td><?php echo $u['tgl_awal_pkerjaan'].' s.d '.$u['tgl_akhir_pkerjaan']; ?></td>
+        <td><?php echo $u['tgl_awal_pengadaan'].' s.d '.$u['tgl_akhir_pengadaan']; ?></td>
         <td><?php echo $u['jenis']; ?></td>
         <td><?php echo $u['metode']; ?></td>
         <td><?php echo $u['uraian']; ?></td>
         <td><?php echo $u['tahun_anggaran']; ?></td>
-        <td><?php echo $u['createtime']; ?></td>
-        <td><?php echo $u['nama_paket']; ?></td>
-        <td><?php echo $u['rincian_paket']; ?></td>
-        <td><?php echo $u['detail_paket']; ?></td>
-        <td><?php echo $u['uang_paket']; ?></td>
+        <!-- <td><?php //echo $u['createtime']; ?></td> -->
+        <!-- <td><?php //echo $u['rincian_paket']; ?></td>
+        <td><?php //echo $u['detail_paket']; ?></td>
+        <td><?php //echo $u['uang_paket']; ?></td> -->
         <td>
-=======
-        <td><?php echo $u['nama_paket']; ?></td>
-		<!-- <td><?php //echo $u['id_paket']; ?></td>
-		<td><?php //echo $u['id_keterangan']; ?></td>
-		<td><?php ///echo $u['id_penyedia']; ?></td>
-		<td><?php //echo $u['id_progress']; ?></td> -->
-		<td><?php echo $u['id_ktgori_pengadaan']; ?></td>
-		<td><?php echo $u['sumberdana']; ?></td>
-		<td><?php echo $u['volume']; ?></td>
-		<td><?php echo $u['tgl_kebutuhan']; ?></td>
-		<td><?php echo $u['tgl_awal_pkerjaan']." s.d ".$u['tgl_akhir_pkerjaan'] ?></td>
-        <td><?php echo $u['tgl_awal_pengadaan']." s.d ".$u['tgl_akhir_pengadaan'] ?></td>
-		<!-- <td><?php //echo $u['tgl_akhir_pkerjaan']; ?></td> -->
-		<!-- <td><?php //echo $u['tgl_awal_pengadaan']; ?></td>
-		<td><?php //echo $u['tgl_akhir_pengadaan']; ?></td> -->
-		<td><?php echo $u['jenis']; ?></td>
-		<td><?php echo $u['metode']; ?></td>
-		<td><?php echo $u['uraian']; ?></td>
-		<td><?php echo $u['tahun_anggaran']; ?></td>
-		<!-- <td><?php //echo $u['createtime']; ?></td> -->
-        <td><?php echo $u['id_kegiatan']; ?></td>
-		<!-- <td><?php //echo $u['rincian_paket']; ?></td>
-		<td><?php //echo $u['detail_paket']; ?></td>
-		<td><?php //echo $u['uang_paket']; ?></td> -->
-		<td>
->>>>>>> 316ecfd19511d5d29ba0f2811477d31318b8cc46
             <a href="<?php echo site_url('test-bootstrap/_paket/edit/'.$u['id_paket']); ?>" class="btn btn-info btn-xs">Edit</a> 
             <a href="<?php echo site_url('test-bootstrap/_paket/detail/'.$u['id_paket']); ?>" class="btn btn-danger btn-xs">Detail</a> 
         </td>
