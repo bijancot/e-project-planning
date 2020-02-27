@@ -147,9 +147,12 @@ class _paket extends CI_Controller{
                 $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->getbypaket($id_paket);
 
                 $data['_view'] = '_paket/edit';
+                
+                
                  $this->load->view('template/header');
                 $this->load->view('template/sidebar');
                 $this->load->view('_paket/edit',$data);
+                
                 $this->load->view('template/footer');
                
             }

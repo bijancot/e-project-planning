@@ -91,7 +91,7 @@
 									 $op = array_keys($option);
 
 									 for($r=0;$r<sizeof($op);$r++){
-										if($op[$i]==$_paket['jenis']){
+										if($op[$r]==$_paket['jenis']){
 											$selected='selected = "selected"';
 										}
 										else{
@@ -567,7 +567,7 @@
                                        <td><?php echo $t['nama_kelurahan']; ?></td>
                                        <td><?php echo $t['keterangan']; ?></td>
                                        <td>
-                                             <a href="<?php echo site_url('test-bootstrap/tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs">Edit</a>
+                                             <a href="<?php echo site_url('test-bootstrap/tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs" data-toggle="modal" data-target="#emodal">Edit</a>
                                        </td>
                                     </tr>
                                     <?php 
@@ -577,6 +577,8 @@
                                        </table>
                                  </div>
                                  <br/>
+
+
                               <!-- Modal -->
                               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -609,8 +611,8 @@
                                        <div class="form-group">
                                           <label for="keterangan" class="col-md-4 control-label">Keterangan</label>
                                           <div class="col-md-8">
-                                          <textarea name="keterangan" style="height:280px" type="text" class="form-control" id="keteranga"><?php echo $this->input->post('keterangan'); ?></textarea>
-                                             <!-- <input type="text" name="keterangan" value="" class="form-control" id="keterangan" /> -->
+                                          <textarea name="keterangan" style="height:280px" type="text" class="form-control" id="keterangan"><?php echo $this->input->post('keterangan'); ?></textarea>
+                                             
                                           </div>
                                        </div>
 
@@ -623,12 +625,75 @@
                                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                           <button type="submit" class="btn btn-primary">Save changes</button>
                                        </div>
+
+
                                        <?php echo form_close(); ?>
+                                       
+                                       <!-- Modal2 -->
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+
+                                             <div class="modal fade" id="emodal" tabindex="-1" role="dialog" aria-labelledby="emodalTitle" aria-hidden="true">
+                                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h2 class="modal-title" id="exampleModalLongTitle">Ubah Lokasi Paket</h2>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                          </button>
                                        </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+
+                                       <div class="modal-body">
+                                          <?php foreach($tr_lokasi_paket as $o){
+                                             $id=  $o['id'];
+                                             $keterangan=  $o['keterangan'];
+                                          }?>
+                                       <?php echo form_open('test-bootstrap/tr_lokasi_paket/edit/'.$id,array("class"=>"form-horizontal")); ?>
+
+                                                <input type="hidden" name="id_paket" value="<?php echo $_paket['id_paket']; ?>">                                                   
+                                       <div class="form-group">
+                                          <label for="id_paket" class="col-md-4 control-label"></label>
+                                          <div class="col-md-8">
+                                             <?php foreach($all_kec_kel as $a){
+                                               $kelurahan[] = $a['id_kelurahan'];
+                                             }?>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="id_kec_kel" class="col-md-4 control-label">Kec Kel</label>
+                                          <div class="col-md-8">
+                                             <select name="id_kec_kel" class="form-control">
+                                                <option value="">select kec_kel</option>
+                                                <?php 
+                                                foreach($all_kec_kel as $kec_kel)
+                                                {
+                                                   $selected = ($kec_kel['id_kelurahan'] == $tr_lokasi_paket['id_kec_kel']) ? ' selected="selected"' : "";
+
+                                                   echo '<option value="'.$kec_kel['id_kelurahan'].'" '.$selected.'>'.$kec_kel['id_kelurahan'].'</option>';
+                                                } 
+                                                ?>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="keterangan" class="col-md-4 control-label">Keterangan</label>
+                                          <div class="col-md-8">
+                                             <input type="text" name="keterangan" value="<?php echo ($this->input->post('keterangan') ? $this->input->post('keterangan') : $keterangan); ?>" class="form-control" id="keterangan" />
+                                          </div>
+                                       </div>
+
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                           <button type="submit" class="btn btn-primary">Save changes</button>
+
+                                          
+                                       </div>      
+                                    <?php echo form_close(); ?>         
+                                       <!-- Modal2 -->
                         </div>
                      </div>
                   </div>
