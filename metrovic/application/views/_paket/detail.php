@@ -1,3 +1,21 @@
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f3f2f2}
+
+th {
+  background-color: #1e88e5;
+  color: white;
+}
+</style>
 <!-- Container fluid  -->
 <div class="container-fluid">
 <!-- Bread crumb and right sidebar toggle -->
@@ -49,10 +67,10 @@
                                 <thead>
                                 <?php foreach($_paket as $u){ ?>
                                 <tr>
-                                 <td colspan="2" align="center">
+                                 <th colspan="2" style="text-align: center">
                                  <?php echo "<strong>Detail Paket</strong>"; ?>
                                  &nbsp;
-                                 </td>
+                                 </th>
                                </tr>
                                 <tr>
                                   <tr>
