@@ -539,7 +539,7 @@
                                  </div>
                               </div>
                               <?php echo form_close(); ?>
-                           <div class="table-responsive m-t-40">
+                           <div class="table-responsive m-t-40" id="lokasi-paket">
                            <h3>Lokasi Paket</h3>
                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                               Tambah Lokasi
