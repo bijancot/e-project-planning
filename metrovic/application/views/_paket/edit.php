@@ -567,9 +567,10 @@
                                        <td><?php echo $t['nama_kelurahan']; ?></td>
                                        <td><?php echo $t['keterangan']; ?></td>
                                        <td>
-                                             <a href="<?php echo site_url('test-bootstrap/tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs" data-toggle="modal" data-target="#emodal">Edit</a>
+                                             <a href="<?php echo site_url('test-bootstrap/tr_lokasi_paket/edit/'.$t['id']); ?>" class="btn btn-info btn-xs" data-toggle="modal" data-target="#emodal<?php echo $a;?>">Edit</a>
                                        </td>
                                     </tr>
+                                    
                                     <?php 
                                        $a=$a+1;
                                     } ?>
@@ -577,7 +578,7 @@
                                        </table>
                                  </div>
                                  <br/>
-
+                                 
 
                               <!-- Modal -->
                               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -635,9 +636,10 @@
                   </div>
                </div>
 
-
-
-                                             <div class="modal fade" id="emodal" tabindex="-1" role="dialog" aria-labelledby="emodalTitle" aria-hidden="true">
+               <?php
+                                    $z=1;
+                                    foreach ($tr_lokasi_paket as $t){ ?>
+                              <div class="modal fade" id="emodal<?php echo $z?>" tabindex="-1" role="dialog" aria-labelledby="emodalTitle" aria-hidden="true">
                                  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                     <div class="modal-content">
                                        <div class="modal-header">
@@ -652,9 +654,9 @@
                                              $id=  $o['id'];
                                              $keterangan=  $o['keterangan'];
                                           }?>
-                                       <?php echo form_open('test-bootstrap/tr_lokasi_paket/edit/'.$id,array("class"=>"form-horizontal")); ?>
+                                       <?php echo form_open('test-bootstrap/tr_lokasi_paket/edit/'.$t['id'],array("class"=>"form-horizontal")); ?>
 
-                                                <input type="hidden" name="id_paket" value="<?php echo $_paket['id_paket']; ?>">                                                   
+                                    <input type="hidden" name="id_paket" value="<?php echo $_paket['id_paket']; ?>">                                                   
                                        <div class="form-group">
                                           <label for="id_paket" class="col-md-4 control-label"></label>
                                           <div class="col-md-8">
@@ -671,9 +673,15 @@
                                                 <?php 
                                                 foreach($all_kec_kel as $kec_kel)
                                                 {
-                                                   $selected = ($kec_kel['id_kelurahan'] == $tr_lokasi_paket['id_kec_kel']) ? ' selected="selected"' : "";
-
-                                                   echo '<option value="'.$kec_kel['id_kelurahan'].'" '.$selected.'>'.$kec_kel['id_kelurahan'].'</option>';
+                                                   // $selected = ($kec_kel['id_kelurahan'] == $tr_lokasi_paket['id_kec_kel']) ? ' selected="selected"' : "";
+                                                  
+                                                      if($kec_kel['nama_kecamatan']==$t['nama_kecamatan']&& $kec_kel['nama_kelurahan']==$t['nama_kelurahan']){
+                                                         $selected = "selected";
+                                                      }else{
+                                                         $selected ="";
+                                                      }
+                           
+                                                   echo '<option value="'.$kec_kel['id_kelurahan'].'" '.$selected.'>'.$kec_kel['nama_kecamatan'].' - '.$kec_kel['nama_kelurahan'].'</option>';
                                                 } 
                                                 ?>
                                              </select>
@@ -682,7 +690,8 @@
                                        <div class="form-group">
                                           <label for="keterangan" class="col-md-4 control-label">Keterangan</label>
                                           <div class="col-md-8">
-                                             <input type="text" name="keterangan" value="<?php echo ($this->input->post('keterangan') ? $this->input->post('keterangan') : $keterangan); ?>" class="form-control" id="keterangan" />
+                                             <textarea name="keterangan" style="height:200px" class="form-control"><?php echo ($this->input->post('keterangan') ? $this->input->post('keterangan') : $t['keterangan']); ?></textarea>
+                                             <!-- <input type="text" name="keterangan" value="<?php //echo ($this->input->post('keterangan') ? $this->input->post('keterangan') : $keterangan); ?>" class="form-control" id="keterangan" /> -->
                                           </div>
                                        </div>
 
@@ -696,8 +705,12 @@
                                        <!-- Modal2 -->
                         </div>
                      </div>
+</div>
                   </div>
-               </div>
+                                    <?php 
+                                    $z=$z+1;
+                                 }?>
+
                <!-- End Page Content -->
             </div>
          </div>
