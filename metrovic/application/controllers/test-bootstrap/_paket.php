@@ -145,7 +145,7 @@ class _paket extends CI_Controller{
                 
                 $this->load->model('Tr_lokasi_paket_model');
                 $data['tr_lokasi_paket'] = $this->Tr_lokasi_paket_model->getbypaket($id_paket);
-
+                $data['tr_lokasi_paket_1'] = $this->Tr_lokasi_paket_model->getbypaket($id_paket);
                 $data['_view'] = '_paket/edit';
                 
                 
