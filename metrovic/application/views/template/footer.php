@@ -98,6 +98,13 @@
             $("div.printableArea").printArea(options);
         });
     });
+
+    $(document).ready(function () {
+    // Handler for .ready() called.
+    $('html, body').animate({
+        scrollTop: $('#lokasi-paket').offset().top
+    }, 1400);
+    });
     </script>
     <script type="text/javascript">
             $(document).ready(function () {
