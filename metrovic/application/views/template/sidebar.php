@@ -103,6 +103,7 @@
                             <ul aria-expanded="false" class="collapse">
                             <li><a href="<?php echo base_url('test-bootstrap/_paket') ?>"><i class="fa fa-angle-right"></i> Daftar Paket</a></li>
                                 <li><a href="<?php echo base_url('test-bootstrap/_paket/add') ?>"><i class="fa fa-angle-right"></i> Tambah Paket</a></li>
+                                <li><a href="<?php echo base_url('test-bootstrap/_paket/cetaklaporan') ?>"><i class="fa fa-angle-right"></i> Cetak Laporan Paket</a></li>
                             </ul>
                         </li>
 

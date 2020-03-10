@@ -158,6 +158,7 @@
     <script src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script src="http://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
     <script src="http://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/colvis/buttons.colVis.min.js"></script>
     <script>
     $(document).ready(function() {
         $('#myTable').DataTable();
@@ -201,8 +202,18 @@
     $('#example23').DataTable({
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'excel', 'pdf'
-        ]
+            {
+                extend: 'print',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            'colvis'
+        ],
+        columnDefs: [ {
+            targets: -1,
+            visible: false
+        } ]
     });
     </script>
 
@@ -211,6 +222,7 @@
     <script src="<?php echo base_url() ?>assets/plugins/datatables/dataTables.bootstrap.js"></script>
     <script src="<?php echo base_url() ?>assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
     <script src="<?php echo base_url() ?>assets/plugins/tiny-editable/numeric-input-example.js"></script>
+    
     <script>
     $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
     $('#editable-datatable').editableTableWidget().numericInputExample().find('td:first').focus();

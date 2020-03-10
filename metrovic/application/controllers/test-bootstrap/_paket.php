@@ -208,5 +208,16 @@ class _paket extends CI_Controller{
                 $this->load->view('template/addjs');
                
     }
+
+    function cetakLaporan(){
+       
+        $data['_paket'] = $this->_paket_model->get_all__paket();
+        $data['_paket1'] = $this->_paket_model->get_id_paket_l();
+        
+        $this->load->view('template/header-colvis');
+        $this->load->view('template/sidebar');
+        $this->load->view('_paket/paket',$data);
+        $this->load->view('template/footer-colvis');
+    }
     
 }
