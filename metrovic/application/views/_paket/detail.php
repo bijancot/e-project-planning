@@ -11,7 +11,7 @@ th, td {
 
 tr:nth-child(even){background-color: #f3f2f2}
 
-th {
+.headhead {
   background-color: #1e88e5;
   color: white;
 }
@@ -67,7 +67,7 @@ th {
                                 <thead>
                                 <?php foreach($_paket as $u){ ?>
                                 <tr>
-                                 <th colspan="2" style="text-align: center">
+                                 <th colspan="2" style="text-align: center" class="headhead">
                                  <?php echo "<strong>Detail Paket</strong>"; ?>
                                  &nbsp;
                                  </th>
