@@ -10,19 +10,16 @@
                         <li>
                             <a class="waves-effect waves-dark" href="<?php echo base_url('test-bootstrap/index') ?>" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
-
-                        <li>
+                            <?php
+                            if($this->session->userdata('role') == 'Administrator'){
+                            ?>
+                             <li>
                             <a class="has-arrow waves-effect waves-dark" href="<?php echo base_url('admin/user/all_user_list') ?>" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
 
-                                <?php if ($this->session->userdata('role') == 'admin'): ?>
                                     <li><a href="<?php echo base_url('admin/user') ?>"><i class="fa fa-angle-right"></i> Add User </a></li>
                                     <li><a href="<?php echo base_url('admin/user/power') ?>"><i class="fa fa-angle-right"></i> Add User Power</a></li>
-                                <?php else: ?>
-                                    <?php if(check_power(1)):?>
                                         <li><a href="<?php echo base_url('admin/user') ?>"><i class="fa fa-angle-right"></i> Add User </a></li>
-                                    <?php endif; ?>
-                                <?php endif ?>
 
                                 <li><a href="<?php echo base_url('admin/user/all_user_list') ?>"><i class="fa fa-angle-right"></i> All Users</a></li>
                             </ul>
@@ -101,7 +98,6 @@
                                 <li><a href="<?php echo base_url('test-bootstrap/urusan/add') ?>"><i class="fa fa-angle-right"></i> Tambah Urusan</a></li>
                             </ul>
                         </li>
-
                         <li>
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-map-marker"></i><span class="hide-menu">Paket</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -117,7 +113,6 @@
                                 <li><a href="<?php echo base_url('test-bootstrap/_kegiatan/add') ?>"><i class="fa fa-angle-right"></i> Tambah Paket</a></li>
                             </ul>
                         </li>
-
                         <!-- <li>
                             <a class="waves-effect waves-dark" href="<?php echo base_url('admin/ui/widget') ?>" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Widgets</span></a>
                         </li>
@@ -154,6 +149,17 @@
                                 <li><a href="<?php echo base_url('test-bootstrap/bidang/add') ?>"><i class="fa fa-angle-right"></i> Tambang Bidang</a></li>
                             </ul>
                         </li>
+                            <?php }else if($this->session->userdata('role') == 'User'){
+                                ?>
+                                 <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-map-marker"></i><span class="hide-menu">Paket</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                            <li><a href="<?php echo base_url('test-bootstrap/_paket') ?>"><i class="fa fa-angle-right"></i> Daftar Paket</a></li>
+                                <li><a href="<?php echo base_url('test-bootstrap/_paket/add') ?>"><i class="fa fa-angle-right"></i> Tambah Paket</a></li>
+                            </ul>
+                        </li>
+                            <?php }
+                            ?>
 
                         <!-- <li class="nav-devider"></li>
                         <li class="nav-small-cap">EXTRA COMPONENTS</li> -->

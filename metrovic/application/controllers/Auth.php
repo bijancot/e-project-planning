@@ -33,6 +33,7 @@ class Auth extends CI_Controller {
                     );
                     $this->session->set_userdata($data);
                     $url = base_url('test-bootstrap/index');
+                    
                 }
                 echo json_encode(array('st'=>1,'url'=> $url)); //--success
             }else{
